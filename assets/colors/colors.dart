@@ -21,6 +21,7 @@ class AppColors {
   static final Color bgColor1 = const Color(0xFFD9D9D9);
   static final Color bgColor2 = const Color(0xFF48566A);
   static final Color bgColor3 = const Color(0xFFCBAF87);
+  static final Color bgColor3 = const Color(0xFFD9D9D9);
   //etc
   static final Color titleColor = const Color(0xFF7E6A56);
   static final Color appbarColor = const Color(0xFF29313D);
