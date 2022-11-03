@@ -58,15 +58,84 @@ class LoginView extends GetView<LoginController> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 60, right: 60),
+                  padding: const EdgeInsets.only(left: 60, right: 60, top: 20),
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Username',
-                      fillColor: Colors.white,
-                    ),
+                        filled: true,
+                        labelText: 'Username',
+                        labelStyle: TextStyle(color: Color(0xFF3C4D58)),
+                        hintText: 'Username',
+                        fillColor: Colors.white,
+                        contentPadding: EdgeInsets.all(10),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Color(0xFF3C4D58), width: 2),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF3C4D58), width: 2))),
                   ),
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 60, right: 60, top: 20),
+                  child: TextField(
+                    obscureText: true,
+                    obscuringCharacter: "*",
+                    decoration: InputDecoration(
+                        filled: true,
+                        labelText: 'Password',
+                        labelStyle: TextStyle(color: Color(0xFF3C4D58)),
+                        hintText: 'Password',
+                        fillColor: Colors.white,
+                        contentPadding: EdgeInsets.all(10),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Color(0xFF3C4D58), width: 2),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF3C4D58), width: 2))),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: Image.asset(
+                    "assets/buttons/login.png",
+                    width: 274,
+                  ),
+                ),
+                Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Text(
+                      "Forgor your password?",
+                      style: TextStyle(
+                          color: Color(0xFF29313D),
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    )),
+                Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Image.asset(
+                    "assets/images/or.png",
+                    width: 274,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Image.asset(
+                    "assets/buttons/g_login.png",
+                    width: 274,
+                  ),
+                ),
+                Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Text(
+                      "Don’t have an account? Please sign up here",
+                      style: TextStyle(
+                        color: Color(0xFF29313D),
+                        fontSize: 15,
+                      ),
+                    )),
               ],
             ),
           ),
