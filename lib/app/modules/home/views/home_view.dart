@@ -19,11 +19,16 @@ class HomeView extends GetView<HomeController> {
           ),
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(top: 30, right: 30),
-            child: Image.asset(
-              "assets/buttons/setting.png",
-              width: 20,
+          GestureDetector(
+            onTap: () {
+              print("tombol setting");
+            },
+            child: Container(
+              margin: const EdgeInsets.only(top: 30, right: 30),
+              child: Image.asset(
+                "assets/buttons/setting.png",
+                width: 20,
+              ),
             ),
           )
         ],
