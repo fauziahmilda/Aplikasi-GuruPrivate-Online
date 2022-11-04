@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -39,23 +40,41 @@ class LoginView extends GetView<LoginController> {
                 ),
                 Text("Add your detail to login",
                     style: TextStyle(fontSize: 12)),
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 100, top: 20),
-                    child: Row(
-                      children: [
-                        SizedBox(width: 1),
-                        Expanded(
-                            child: Text(
-                          "Login",
-                          style: TextStyle(fontSize: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FlatButton(
+                      onPressed: () {
+                        print("Login page");
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 6),
+                          child: Text("Login"),
+                        ),
+                        width: 100,
+                        decoration: BoxDecoration(
+                            border: Border(
+                          bottom: BorderSide(color: Colors.brown, width: 3),
                         )),
-                        Expanded(
-                            child: Text("Sign-in",
-                                style: TextStyle(fontSize: 15))),
-                      ],
+                      ),
                     ),
-                  ),
+                    FlatButton(
+                      onPressed: () {
+                        print("Sign-in page");
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 6),
+                          child: Text("Sign-in"),
+                        ),
+                        width: 100,
+                        decoration: BoxDecoration(border: Border()),
+                      ),
+                    ),
+                  ],
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 60, right: 60, top: 20),
@@ -99,9 +118,14 @@ class LoginView extends GetView<LoginController> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 20),
-                  child: Image.asset(
-                    "assets/buttons/login.png",
-                    width: 274,
+                  child: FlatButton(
+                    onPressed: () {
+                      print("hehe");
+                    },
+                    child: Image.asset(
+                      "assets/buttons/login.png",
+                      width: 274,
+                    ),
                   ),
                 ),
                 Padding(
@@ -115,27 +139,43 @@ class LoginView extends GetView<LoginController> {
                     )),
                 Padding(
                   padding: EdgeInsets.only(top: 5),
-                  child: Image.asset(
-                    "assets/images/or.png",
-                    width: 274,
+                  child: Image.asset("assets/images/or.png", width: 274),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: FlatButton(
+                    onPressed: () {
+                      print("haha");
+                    },
+                    child: Image.asset(
+                      "assets/buttons/g_login.png",
+                      width: 274,
+                    ),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 10),
-                  child: Image.asset(
-                    "assets/buttons/g_login.png",
-                    width: 274,
-                  ),
+                  child: Text.rich(TextSpan(children: [
+                    TextSpan(
+                        text: 'Don’t have an account? Please sign up ',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Color(0xFF29313D),
+                        )),
+                    TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            print("object");
+                          },
+                        text: 'here',
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                          color: Color(0xFF29313D),
+                        ))
+                  ])),
                 ),
-                Padding(
-                    padding: EdgeInsets.only(top: 10),
-                    child: Text(
-                      "Don’t have an account? Please sign up here",
-                      style: TextStyle(
-                        color: Color(0xFF29313D),
-                        fontSize: 15,
-                      ),
-                    )),
               ],
             ),
           ),
