@@ -62,9 +62,7 @@ class LoginView extends GetView<LoginController> {
                       ),
                     ),
                     FlatButton(
-                      onPressed: () {
-                        print("Sign-in page");
-                      },
+                      onPressed: () => Get.offAllNamed(Routes.SIGN),
                       child: Container(
                         alignment: Alignment.center,
                         child: Padding(
@@ -163,9 +161,7 @@ class LoginView extends GetView<LoginController> {
                         )),
                     TextSpan(
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            print("object");
-                          },
+                          ..onTap = () => Get.offAllNamed(Routes.SIGN),
                         text: 'here',
                         style: TextStyle(
                           decoration: TextDecoration.underline,
