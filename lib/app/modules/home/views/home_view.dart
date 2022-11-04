@@ -10,9 +10,9 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 80,
+        toolbarHeight: 60,
         title: Padding(
-          padding: const EdgeInsets.only(top: 30, left: 30),
+          padding: const EdgeInsets.only(top: 10, left: 30),
           child: Image.asset(
             "assets/images/dira.png",
             width: 50,
@@ -24,7 +24,7 @@ class HomeView extends GetView<HomeController> {
               print("tombol setting");
             },
             child: Container(
-              margin: const EdgeInsets.only(top: 30, right: 30),
+              margin: const EdgeInsets.only(top: 10, right: 30),
               child: Image.asset(
                 "assets/buttons/setting.png",
                 width: 20,
@@ -38,12 +38,70 @@ class HomeView extends GetView<HomeController> {
       ),
       body: Stack(
         children: [
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.only(top: 30),
+              color: Color(0xffD9D9D9),
+            ),
+          ),
           Container(
             alignment: Alignment.topCenter,
             height: 250,
             width: Get.width,
             child: Image.asset("assets/images/home-atas.png"),
-          )
+          ),
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.only(top: 100),
+              color: Color.fromARGB(255, 122, 72, 72),
+            ),
+          ),
+          Container(
+              margin: EdgeInsets.only(top: 20, left: 40, right: 40),
+              width: 350,
+              height: 150,
+              decoration: BoxDecoration(
+                color: Color(0xFF48566A),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    margin: EdgeInsets.only(left: 20, top: 30),
+                    child: Text(
+                      "Milda Maulida Fauziah",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Divider(
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    margin: EdgeInsets.only(left: 20, top: 30),
+                    child: Text(
+                      "12 MIPA",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Divider(
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              )),
         ],
       ),
     );
