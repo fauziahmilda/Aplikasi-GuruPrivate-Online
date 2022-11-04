@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-
+import 'package:flutter/src/widgets/scrollbar.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -52,13 +52,14 @@ class HomeView extends GetView<HomeController> {
           ),
           Expanded(
             child: Container(
-              margin: EdgeInsets.only(top: 100),
+              height: 504,
+              margin: EdgeInsets.only(top: 140),
               color: Color(0xffD9D9D9),
               child: ListView(
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsets.only(top: 50, left: 30, right: 30),
+                        const EdgeInsets.only(top: 10, left: 30, right: 30),
                     child: Scrollbar(
                       thumbVisibility: true,
                       child: SingleChildScrollView(
@@ -179,7 +180,7 @@ class HomeView extends GetView<HomeController> {
                             ),
                             TextButton(
                                 onPressed: () {
-                                  print("lihat semua pakages");
+                                  print("lihat semua paket");
                                 },
                                 child: Text(
                                   "Lihat Semua >",
@@ -265,8 +266,7 @@ class HomeView extends GetView<HomeController> {
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(bottom: 10, top: 10),
+                              padding: const EdgeInsets.only(bottom: 10),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -404,6 +404,71 @@ class HomeView extends GetView<HomeController> {
               ],
             ),
           ),
+          //MENU BAWAH-----------------------------------------------------------
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(80),
+                    topRight: Radius.circular(80)),
+                child: Container(
+                  width: Get.width,
+                  height: 75,
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        IconButton(
+                          iconSize: 40,
+                          onPressed: () {
+                            print("msg page");
+                          },
+                          icon: Image.asset(
+                            "assets/buttons/menu-msg.png",
+                          ),
+                        ),
+                        IconButton(
+                          iconSize: 50,
+                          onPressed: () {
+                            print("search page");
+                          },
+                          icon: Image.asset("assets/buttons/menu-scr.png"),
+                        ),
+                        IconButton(
+                          iconSize: 60,
+                          onPressed: () {
+                            print("home page");
+                          },
+                          icon: Image.asset("assets/buttons/menu-home.png"),
+                        ),
+                        IconButton(
+                          iconSize: 50,
+                          onPressed: () {
+                            print("cart page");
+                          },
+                          icon: Image.asset(
+                            "assets/buttons/menu-cart.png",
+                          ),
+                        ),
+                        IconButton(
+                          iconSize: 40,
+                          onPressed: () {
+                            print("profile page");
+                          },
+                          icon: Image.asset(
+                            "assets/buttons/menu-profile.png",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
