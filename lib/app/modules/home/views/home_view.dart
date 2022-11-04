@@ -53,55 +53,357 @@ class HomeView extends GetView<HomeController> {
           Expanded(
             child: Container(
               margin: EdgeInsets.only(top: 100),
-              color: Color.fromARGB(255, 122, 72, 72),
-            ),
-          ),
-          Container(
-              margin: EdgeInsets.only(top: 20, left: 40, right: 40),
-              width: 350,
-              height: 150,
-              decoration: BoxDecoration(
-                color: Color(0xFF48566A),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
+              color: Color(0xffD9D9D9),
+              child: ListView(
                 children: [
-                  Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.only(left: 20, top: 30),
-                    child: Text(
-                      "Milda Maulida Fauziah",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 50, left: 30, right: 30),
+                    child: Scrollbar(
+                      thumbVisibility: true,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 6, right: 6),
+                                child: Image.asset(
+                                  "assets/images/tname.png",
+                                  width: 70,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 6, right: 6),
+                                child: Image.asset(
+                                  "assets/images/tname.png",
+                                  width: 70,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 6, right: 6),
+                                child: Image.asset(
+                                  "assets/images/tname.png",
+                                  width: 70,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 6, right: 6),
+                                child: Image.asset(
+                                  "assets/images/tname.png",
+                                  width: 70,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 6, right: 6),
+                                child: Image.asset(
+                                  "assets/images/tname.png",
+                                  width: 70,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Divider(
-                      color: Colors.white,
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.only(left: 20, top: 30),
-                    child: Text(
-                      "12 MIPA",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
+                    padding:
+                        const EdgeInsets.only(top: 30, left: 30, right: 30),
+                    child: Scrollbar(
+                      thumbVisibility: true,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 10, right: 10),
+                                child: Image.asset(
+                                  "assets/images/mapel1.png",
+                                  width: 50,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10, right: 10),
+                                child: Image.asset(
+                                  "assets/images/mapel2.png",
+                                  width: 50,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10, right: 10),
+                                child: Image.asset(
+                                  "assets/images/mapel3.png",
+                                  width: 50,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10, right: 10),
+                                child: Image.asset(
+                                  "assets/images/mapel4.png",
+                                  width: 50,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10, right: 10),
+                                child: Image.asset(
+                                  "assets/images/mapel5.png",
+                                  width: 53,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Divider(
-                      color: Colors.white,
+                    padding:
+                        const EdgeInsets.only(top: 30, left: 30, right: 30),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Packages",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color(0xFF29313D),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            TextButton(
+                                onPressed: () {
+                                  print("lihat semua pakages");
+                                },
+                                child: Text(
+                                  "Lihat Semua >",
+                                  style: TextStyle(
+                                      color: Color(0xFF29313D), fontSize: 10),
+                                ))
+                          ],
+                        ),
+                        Scrollbar(
+                          thumbVisibility: true,
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 5, right: 5),
+                                    child: Image.asset(
+                                      "assets/images/p-bronze.png",
+                                      width: 100,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 5, right: 5),
+                                    child: Image.asset(
+                                      "assets/images/p-silver.png",
+                                      width: 100,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 5, right: 5),
+                                    child: Image.asset(
+                                      "assets/images/p-gold.png",
+                                      width: 100,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 5, right: 5),
+                                    child: Image.asset(
+                                      "assets/images/p-plat.png",
+                                      width: 100,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 30, left: 30, right: 30),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Favorites Teacher",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color(0xFF29313D),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            TextButton(
+                                onPressed: () {
+                                  print("lihat semua fav guru");
+                                },
+                                child: Text(
+                                  "Lihat Semua >",
+                                  style: TextStyle(
+                                      color: Color(0xFF29313D), fontSize: 10),
+                                ))
+                          ],
+                        ),
+                        Scrollbar(
+                          thumbVisibility: true,
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(bottom: 10, top: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 5, right: 5),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        width: 100,
+                                        height: 100,
+                                        color: Color(0xFF5D6E89),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Image.asset(
+                                            "assets/images/t4.png",
+                                            width: 100,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 5, right: 5),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        width: 100,
+                                        height: 100,
+                                        color: Color(0xFFCBAF87),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Image.asset(
+                                            "assets/images/t3.png",
+                                            width: 100,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 5, right: 5),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        width: 100,
+                                        height: 100,
+                                        color: Color(0xFF29313D),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Image.asset(
+                                            "assets/images/t5.png",
+                                            width: 100,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 5, right: 5),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        width: 100,
+                                        height: 100,
+                                        color: Color(0xFF584A3C),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Image.asset(
+                                            "assets/images/t7.png",
+                                            width: 100,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
-              )),
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 20, left: 40, right: 40),
+            width: 350,
+            height: 120,
+            decoration: BoxDecoration(
+              color: Color(0xFF48566A),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              children: [
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.only(left: 20, top: 23),
+                  child: Text(
+                    "Milda Maulida Fauziah",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+                  child: Container(
+                    height: 1,
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    "12 MIPA",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+                  child: Container(
+                    height: 1,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
