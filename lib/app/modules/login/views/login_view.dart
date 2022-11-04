@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_bazara/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
 
@@ -119,9 +120,7 @@ class LoginView extends GetView<LoginController> {
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: FlatButton(
-                    onPressed: () {
-                      print("hehe");
-                    },
+                    onPressed: () => Get.offAllNamed(Routes.HOME),
                     child: Image.asset(
                       "assets/buttons/login.png",
                       width: 274,
