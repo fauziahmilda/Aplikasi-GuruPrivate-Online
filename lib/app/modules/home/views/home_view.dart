@@ -74,7 +74,7 @@ class HomeView extends GetView<HomeController> {
                       ),
                       IconButton(
                         iconSize: 50,
-                        onPressed: () => Get.offAllNamed(Routes.CART)
+                        onPressed: () => Get.offAllNamed(Routes.CART),
                         icon: Image.asset(
                           "assets/buttons/menu-cart.png",
                         ),
