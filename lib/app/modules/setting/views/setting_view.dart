@@ -113,7 +113,7 @@ class SettingView extends GetView<SettingController> {
                             child: Container(
                               color: Color(0xFFD9D9D9),
                               width: 300,
-                              height: 440,
+                              height: 380,
                             ),
                           ),
                           FlatButton(
@@ -127,9 +127,11 @@ class SettingView extends GetView<SettingController> {
                     ),
                     //bagian atas yg ada gambar sama tulisan2
                     Padding(
-                      padding: const EdgeInsets.only(top: 50),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 50, vertical: 85),
                       child: Column(
                         children: [
+                          //nama dan foto
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -140,6 +142,9 @@ class SettingView extends GetView<SettingController> {
                                 ),
                               ),
                               Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     "Milda Maulida Fauziah",
@@ -149,7 +154,44 @@ class SettingView extends GetView<SettingController> {
                                 ],
                               )
                             ],
-                          )
+                          ),
+                          //icon2
+                          Divider(),
+                          FlatButton(
+                            onPressed: () => Get.offAllNamed(Routes.PROFILE),
+                            child: Image.asset(
+                              "assets/buttons/s1.png",
+                              width: 250,
+                            ),
+                          ),
+                          FlatButton(
+                            onPressed: () => Get.offAllNamed(Routes.PROFILE),
+                            child: Image.asset(
+                              "assets/buttons/s2.png",
+                              width: 250,
+                            ),
+                          ),
+                          FlatButton(
+                            onPressed: () => Get.offAllNamed(Routes.PROFILE),
+                            child: Image.asset(
+                              "assets/buttons/s3.png",
+                              width: 250,
+                            ),
+                          ),
+                          FlatButton(
+                            onPressed: () => Get.offAllNamed(Routes.PROFILE),
+                            child: Image.asset(
+                              "assets/buttons/s4.png",
+                              width: 250,
+                            ),
+                          ),
+                          FlatButton(
+                            onPressed: () => Get.offAllNamed(Routes.PROFILE),
+                            child: Image.asset(
+                              "assets/buttons/s5.png",
+                              width: 250,
+                            ),
+                          ),
                         ],
                       ),
                     )
