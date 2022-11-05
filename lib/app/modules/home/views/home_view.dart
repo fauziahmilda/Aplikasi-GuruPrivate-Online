@@ -73,9 +73,7 @@ class HomeView extends GetView<HomeController> {
                       ),
                       IconButton(
                         iconSize: 60,
-                        onPressed: () {
-                          print("home page");
-                        },
+                        onPressed: () => Get.offAllNamed(Routes.HOME),
                         icon: Image.asset("assets/buttons/menu-home.png"),
                       ),
                       IconButton(
