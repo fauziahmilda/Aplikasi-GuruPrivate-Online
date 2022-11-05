@@ -4,6 +4,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/message/bindings/message_binding.dart';
+import '../modules/message/views/message_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/setting/bindings/setting_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.SIGN,
       page: () => const SignView(),
       binding: SignBinding(),
+    ),
+    GetPage(
+      name: _Paths.MESSAGE,
+      page: () => const MessageView(),
+      binding: MessageBinding(),
     ),
   ];
 }
