@@ -125,7 +125,7 @@ class ProfileView extends GetView<ProfileController> {
                         ),
                         IconButton(
                           iconSize: 40,
-                          onPressed: () => Get.offAllNamed(Routes.PROFILE),
+                          onPressed: () => Get.offAllNamed(Routes.SETTING),
                           icon: Image.asset(
                             "assets/buttons/menu-profile.png",
                           ),
