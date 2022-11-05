@@ -9,6 +9,7 @@ abstract class Routes {
   static const SETTING = _Paths.SETTING;
   static const SIGN = _Paths.SIGN;
   static const MESSAGE = _Paths.MESSAGE;
+  static const CART = _Paths.CART;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const SETTING = '/setting';
   static const SIGN = '/sign';
   static const MESSAGE = '/message';
+  static const CART = '/cart';
 }
