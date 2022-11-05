@@ -47,9 +47,7 @@ class SettingView extends GetView<SettingController> {
                       children: [
                         IconButton(
                           iconSize: 40,
-                          onPressed: () {
-                            print("msg page");
-                          },
+                          onPressed: () => Get.offAllNamed(Routes.MESSAGE),
                           icon: Image.asset(
                             "assets/buttons/menu-msg.png",
                           ),
