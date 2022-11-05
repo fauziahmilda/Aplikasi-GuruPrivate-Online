@@ -35,14 +35,83 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: Color(0xFFCBAF87),
         elevation: 0,
       ),
+      bottomNavigationBar: BottomAppBar(
+        child: Stack(
+          children: [
+            Container(
+              color: Color(0xFFD9D9D9),
+              height: 75,
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(80), topRight: Radius.circular(80)),
+              child: Container(
+                width: Get.width,
+                height: 75,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  //ICON ICON
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      IconButton(
+                        iconSize: 40,
+                        onPressed: () {
+                          print("msg page");
+                        },
+                        icon: Image.asset(
+                          "assets/buttons/menu-msg.png",
+                        ),
+                      ),
+                      IconButton(
+                        iconSize: 50,
+                        onPressed: () {
+                          print("search page");
+                        },
+                        icon: Image.asset("assets/buttons/menu-scr.png"),
+                      ),
+                      IconButton(
+                        iconSize: 60,
+                        onPressed: () {
+                          print("home page");
+                        },
+                        icon: Image.asset("assets/buttons/menu-home.png"),
+                      ),
+                      IconButton(
+                        iconSize: 50,
+                        onPressed: () {
+                          print("cart page");
+                        },
+                        icon: Image.asset(
+                          "assets/buttons/menu-cart.png",
+                        ),
+                      ),
+                      IconButton(
+                        iconSize: 40,
+                        onPressed: () => Get.offAllNamed(Routes.PROFILE),
+                        icon: Image.asset(
+                          "assets/buttons/menu-profile.png",
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
+          //BACKGROUND PALING DALAM
           Expanded(
             child: Container(
               margin: EdgeInsets.only(top: 30),
               color: Color(0xffD9D9D9),
             ),
           ),
+          //HOME ATAS
           Container(
             alignment: Alignment.topCenter,
             height: 250,
@@ -404,68 +473,6 @@ class HomeView extends GetView<HomeController> {
             ),
           ),
           //MENU BAWAH-----------------------------------------------------------
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(80),
-                    topRight: Radius.circular(80)),
-                child: Container(
-                  width: Get.width,
-                  height: 75,
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        IconButton(
-                          iconSize: 40,
-                          onPressed: () {
-                            print("msg page");
-                          },
-                          icon: Image.asset(
-                            "assets/buttons/menu-msg.png",
-                          ),
-                        ),
-                        IconButton(
-                          iconSize: 50,
-                          onPressed: () {
-                            print("search page");
-                          },
-                          icon: Image.asset("assets/buttons/menu-scr.png"),
-                        ),
-                        IconButton(
-                          iconSize: 60,
-                          onPressed: () {
-                            print("home page");
-                          },
-                          icon: Image.asset("assets/buttons/menu-home.png"),
-                        ),
-                        IconButton(
-                          iconSize: 50,
-                          onPressed: () {
-                            print("cart page");
-                          },
-                          icon: Image.asset(
-                            "assets/buttons/menu-cart.png",
-                          ),
-                        ),
-                        IconButton(
-                          iconSize: 40,
-                          onPressed: () => Get.offAllNamed(Routes.PROFILE),
-                          icon: Image.asset(
-                            "assets/buttons/menu-profile.png",
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          )
         ],
       ),
     );

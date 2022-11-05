@@ -20,6 +20,7 @@ class SignView extends GetView<SignController> {
             child: Image.asset("assets/images/wp2.png"),
           ),
         ),
+        //LATAR KOTAK
         Center(
           child: Padding(
             padding: const EdgeInsets.only(top: 30),
