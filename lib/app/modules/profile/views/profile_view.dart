@@ -102,9 +102,7 @@ class ProfileView extends GetView<ProfileController> {
                         ),
                         IconButton(
                           iconSize: 50,
-                          onPressed: () {
-                            print("search page");
-                          },
+                          onPressed: () => Get.offAllNamed(Routes.SEARCH),
                           icon: Image.asset("assets/buttons/menu-scr.png"),
                         ),
                         IconButton(
@@ -114,9 +112,7 @@ class ProfileView extends GetView<ProfileController> {
                         ),
                         IconButton(
                           iconSize: 50,
-                          onPressed: () {
-                            print("cart page");
-                          },
+                          onPressed: () => Get.offAllNamed(Routes.CART),
                           icon: Image.asset(
                             "assets/buttons/menu-cart.png",
                           ),
