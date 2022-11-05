@@ -10,6 +10,7 @@ abstract class Routes {
   static const SIGN = _Paths.SIGN;
   static const MESSAGE = _Paths.MESSAGE;
   static const CART = _Paths.CART;
+  static const SEARCH = _Paths.SEARCH;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const SIGN = '/sign';
   static const MESSAGE = '/message';
   static const CART = '/cart';
+  static const SEARCH = '/search';
 }

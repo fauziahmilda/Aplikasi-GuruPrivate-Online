@@ -10,6 +10,8 @@ import '../modules/message/bindings/message_binding.dart';
 import '../modules/message/views/message_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/search/bindings/search_binding.dart';
+import '../modules/search/views/search_view.dart';
 import '../modules/setting/bindings/setting_binding.dart';
 import '../modules/setting/views/setting_view.dart';
 import '../modules/sign/bindings/sign_binding.dart';
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.CART,
       page: () => const CartView(),
       binding: CartBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH,
+      page: () => const SearchView(),
+      binding: SearchBinding(),
     ),
   ];
 }
