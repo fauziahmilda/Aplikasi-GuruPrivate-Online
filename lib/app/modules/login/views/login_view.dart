@@ -125,6 +125,7 @@ class LoginView extends GetView<LoginController> {
                     ),
                   ),
                 ),
+                //LOGIN
                 Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Text(
@@ -134,10 +135,12 @@ class LoginView extends GetView<LoginController> {
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     )),
+                //OR
                 Padding(
                   padding: EdgeInsets.only(top: 5),
                   child: Image.asset("assets/images/or.png", width: 274),
                 ),
+                //LOGIN W G
                 Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: FlatButton(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_bazara/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter/src/widgets/scrollbar.dart';
@@ -20,9 +21,7 @@ class HomeView extends GetView<HomeController> {
         ),
         actions: [
           GestureDetector(
-            onTap: () {
-              print("tombol setting");
-            },
+            onTap: () => Get.offAllNamed(Routes.SETTING),
             child: Container(
               margin: const EdgeInsets.only(top: 10, right: 30),
               child: Image.asset(
@@ -455,9 +454,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                         IconButton(
                           iconSize: 40,
-                          onPressed: () {
-                            print("profile page");
-                          },
+                          onPressed: () => Get.offAllNamed(Routes.PROFILE),
                           icon: Image.asset(
                             "assets/buttons/menu-profile.png",
                           ),
