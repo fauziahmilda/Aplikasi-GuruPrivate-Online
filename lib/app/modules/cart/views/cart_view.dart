@@ -10,24 +10,27 @@ class CartView extends GetView<CartController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cart'),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Color(0xFF584A3C),
-        leading: IconButton(
-          onPressed: () => Get.offAllNamed(Routes.HOME),
-          icon: Icon(Icons.arrow_back),
+        appBar: AppBar(
+          title: const Text('Cart'),
+          centerTitle: true,
+          elevation: 0,
+          backgroundColor: Color(0xFF584A3C),
+          leading: IconButton(
+            onPressed: () => Get.offAllNamed(Routes.HOME),
+            icon: Icon(Icons.arrow_back),
+          ),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         ),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
-      ),
-      body: Center(
-        child: Text(
-          'CartView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    );
+        bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  "assets/buttons/delete.png",
+                  height: 30,
+                ),
+                label: 'coba'),
+          ],
+        ));
   }
 }

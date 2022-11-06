@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
+import '../modules/detailGuru/bindings/detail_guru_binding.dart';
+import '../modules/detailGuru/views/detail_guru_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.SEARCH,
       page: () => const SearchView(),
       binding: SearchBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_GURU,
+      page: () => const DetailGuruView(),
+      binding: DetailGuruBinding(),
     ),
   ];
 }
