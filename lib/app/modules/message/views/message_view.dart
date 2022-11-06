@@ -106,7 +106,6 @@ class MessageView extends GetView<MessageController> {
                     "15:25 PM",
                     style: TextStyle(color: Colors.white),
                   ),
-                  Icon(Icons.numbers_rounded)
                 ],
               ),
             ),
