@@ -10,84 +10,107 @@ class MessageView extends GetView<MessageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF48566A),
-      appBar: AppBar(
-        title: const Text('Chat'),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Color(0xFF584A3C),
-        leading: IconButton(
-          onPressed: () => Get.offAllNamed(Routes.HOME),
-          icon: Icon(Icons.arrow_back),
+        backgroundColor: Color(0xFF48566A),
+        appBar: AppBar(
+          title: const Text('Chat'),
+          centerTitle: true,
+          elevation: 0,
+          backgroundColor: Color(0xFF584A3C),
+          leading: IconButton(
+            onPressed: () => Get.offAllNamed(Routes.HOME),
+            icon: Icon(Icons.arrow_back),
+          ),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         ),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Stack(
-          children: [
-            Container(
-              color: Color(0xFFD9D9D9),
-              height: 75,
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(80), topRight: Radius.circular(80)),
-              child: Container(
-                width: Get.width,
+        bottomNavigationBar: BottomAppBar(
+          child: Stack(
+            children: [
+              Container(
+                color: Color(0xFF48566A),
                 height: 75,
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  //ICON ICON
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      IconButton(
-                        iconSize: 40,
-                        onPressed: () => Get.offAllNamed(Routes.MESSAGE),
-                        icon: Image.asset(
-                          "assets/buttons/menu-msg.png",
+              ),
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(80),
+                    topRight: Radius.circular(80)),
+                child: Container(
+                  width: Get.width,
+                  height: 75,
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    //ICON ICON
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        IconButton(
+                          iconSize: 40,
+                          onPressed: () => Get.offAllNamed(Routes.MESSAGE),
+                          icon: Image.asset(
+                            "assets/buttons/menu-msg.png",
+                          ),
                         ),
-                      ),
-                      IconButton(
-                        iconSize: 50,
-                        onPressed: () => Get.offAllNamed(Routes.SEARCH),
-                        icon: Image.asset("assets/buttons/menu-scr.png"),
-                      ),
-                      IconButton(
-                        iconSize: 60,
-                        onPressed: () => Get.offAllNamed(Routes.HOME),
-                        icon: Image.asset("assets/buttons/menu-home.png"),
-                      ),
-                      IconButton(
-                        iconSize: 50,
-                        onPressed: () => Get.offAllNamed(Routes.CART),
-                        icon: Image.asset(
-                          "assets/buttons/menu-cart.png",
+                        IconButton(
+                          iconSize: 50,
+                          onPressed: () => Get.offAllNamed(Routes.SEARCH),
+                          icon: Image.asset("assets/buttons/menu-scr.png"),
                         ),
-                      ),
-                      IconButton(
-                        iconSize: 40,
-                        onPressed: () => Get.offAllNamed(Routes.SETTING),
-                        icon: Image.asset(
-                          "assets/buttons/menu-profile.png",
+                        IconButton(
+                          iconSize: 60,
+                          onPressed: () => Get.offAllNamed(Routes.HOME),
+                          icon: Image.asset("assets/buttons/menu-home.png"),
                         ),
-                      ),
-                    ],
+                        IconButton(
+                          iconSize: 50,
+                          onPressed: () => Get.offAllNamed(Routes.CART),
+                          icon: Image.asset(
+                            "assets/buttons/menu-cart.png",
+                          ),
+                        ),
+                        IconButton(
+                          iconSize: 40,
+                          onPressed: () => Get.offAllNamed(Routes.SETTING),
+                          icon: Image.asset(
+                            "assets/buttons/menu-profile.png",
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
+            ],
+          ),
+        ),
+        body: ListView(
+          children: [
+            ListTile(
+              title: Text(
+                "Fauziah Milda",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                "Ini pesan dari fauziah tell me honestly would you still love me the same apa saja yang ada dalam pikiran mu tidak boleh mempengaruhi kamu itu gimana",
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              leading: CircleAvatar(),
+              trailing: Column(
+                children: [
+                  Text(
+                    "15:25 PM",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  Icon(Icons.numbers_rounded)
+                ],
+              ),
             ),
           ],
-        ),
-      ),
-      body: Center(
-        child: Text(
-          'MessageView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    );
+        ));
   }
 }
