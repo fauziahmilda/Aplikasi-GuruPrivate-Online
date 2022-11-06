@@ -170,8 +170,8 @@ class ProfileView extends GetView<ProfileController> {
                   borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
                   child: Container(
                     color: Color(0xFFD9D9D9),
-                    width: Get.width,
-                    height: 450,
+                    width: Get.width * 100 / 100,
+                    height: Get.height * 50 / 100,
                     child: Padding(
                       padding:
                           const EdgeInsets.only(left: 30, right: 30, top: 30),
