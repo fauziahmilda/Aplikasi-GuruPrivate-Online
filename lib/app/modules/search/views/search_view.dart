@@ -33,6 +33,7 @@ class SearchView extends GetView<SearchController> {
             children: [
               Container(
                 color: Color(0xFFD9D9D9),
+                width: Get.width * 100 / 100,
                 height: 75,
               ),
               ClipRRect(

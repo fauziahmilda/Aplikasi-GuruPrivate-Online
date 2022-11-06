@@ -40,13 +40,14 @@ class HomeView extends GetView<HomeController> {
           children: [
             Container(
               color: Color(0xFFD9D9D9),
+              width: Get.width * 100 / 100,
               height: 75,
             ),
             ClipRRect(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(80), topRight: Radius.circular(80)),
               child: Container(
-                width: Get.width,
+                width: Get.width * 100 / 100,
                 height: 75,
                 color: Colors.white,
                 child: Padding(
