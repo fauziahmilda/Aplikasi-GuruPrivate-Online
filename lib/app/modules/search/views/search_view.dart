@@ -98,21 +98,21 @@ class SearchView extends GetView<SearchController> {
                 Wrap(
                   alignment: WrapAlignment.start,
                   children: [
-                    FlatButton(
+                    TextButton(
                       onPressed: () {},
                       child: Image.asset(
                         "assets/buttons/f-mapel.png",
                         height: 30,
                       ),
                     ),
-                    FlatButton(
+                    TextButton(
                       onPressed: () {},
                       child: Image.asset(
                         "assets/buttons/f-tingkat.png",
                         height: 30,
                       ),
                     ),
-                    FlatButton(
+                    TextButton(
                       onPressed: () {},
                       child: Image.asset(
                         "assets/buttons/f-kelas.png",

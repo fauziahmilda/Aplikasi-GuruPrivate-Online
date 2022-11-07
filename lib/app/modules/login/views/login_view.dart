@@ -44,7 +44,7 @@ class LoginView extends GetView<LoginController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    FlatButton(
+                    TextButton(
                       onPressed: () {
                         print("Login page");
                       },
@@ -61,7 +61,7 @@ class LoginView extends GetView<LoginController> {
                         )),
                       ),
                     ),
-                    FlatButton(
+                    TextButton(
                       onPressed: () => Get.offAllNamed(Routes.SIGN),
                       child: Container(
                         alignment: Alignment.center,
@@ -117,7 +117,7 @@ class LoginView extends GetView<LoginController> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 20),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () => Get.offAllNamed(Routes.HOME),
                     child: Image.asset(
                       "assets/buttons/login.png",
@@ -143,7 +143,7 @@ class LoginView extends GetView<LoginController> {
                 //LOGIN W G
                 Padding(
                   padding: EdgeInsets.only(top: 10),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {
                       print("haha");
                     },

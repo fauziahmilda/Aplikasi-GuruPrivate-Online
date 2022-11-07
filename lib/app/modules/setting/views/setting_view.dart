@@ -6,7 +6,7 @@ import '../../../routes/app_pages.dart';
 import '../controllers/setting_controller.dart';
 
 class SettingView extends GetView<SettingController> {
-  const SettingView({Key? key}) : super(key: key);
+  final ButtonStyle flatButtonStyle = TextButton.styleFrom();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,7 +142,8 @@ class SettingView extends GetView<SettingController> {
                                     ),
                                   ),
                                   Divider(),
-                                  FlatButton(
+                                  TextButton(
+                                    style: flatButtonStyle,
                                     onPressed: () =>
                                         Get.offAllNamed(Routes.PROFILE),
                                     child: Image.asset(
@@ -150,7 +151,7 @@ class SettingView extends GetView<SettingController> {
                                       width: 250,
                                     ),
                                   ),
-                                  FlatButton(
+                                  TextButton(
                                     onPressed: () =>
                                         Get.offAllNamed(Routes.PROFILE),
                                     child: Image.asset(
@@ -158,7 +159,7 @@ class SettingView extends GetView<SettingController> {
                                       width: 250,
                                     ),
                                   ),
-                                  FlatButton(
+                                  TextButton(
                                     onPressed: () =>
                                         Get.offAllNamed(Routes.PROFILE),
                                     child: Image.asset(
@@ -166,7 +167,7 @@ class SettingView extends GetView<SettingController> {
                                       width: 250,
                                     ),
                                   ),
-                                  FlatButton(
+                                  TextButton(
                                     onPressed: () =>
                                         Get.offAllNamed(Routes.PROFILE),
                                     child: Image.asset(
@@ -174,7 +175,7 @@ class SettingView extends GetView<SettingController> {
                                       width: 250,
                                     ),
                                   ),
-                                  FlatButton(
+                                  TextButton(
                                     onPressed: () =>
                                         Get.offAllNamed(Routes.PROFILE),
                                     child: Image.asset(
@@ -186,7 +187,7 @@ class SettingView extends GetView<SettingController> {
                               ),
                             ),
                           ),
-                          FlatButton(
+                          TextButton(
                               onPressed: () {},
                               child: Image.asset(
                                 "assets/buttons/logout.png",

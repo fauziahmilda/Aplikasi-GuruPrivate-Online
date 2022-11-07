@@ -53,7 +53,7 @@ class SignView extends GetView<SignController> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FlatButton(
+                        TextButton(
                           onPressed: () => Get.offAllNamed(Routes.LOGIN),
                           child: Container(
                             alignment: Alignment.center,
@@ -64,7 +64,7 @@ class SignView extends GetView<SignController> {
                             width: 100,
                           ),
                         ),
-                        FlatButton(
+                        TextButton(
                           onPressed: () {},
                           child: Container(
                             alignment: Alignment.center,
@@ -282,7 +282,7 @@ class SignView extends GetView<SignController> {
                     //SIGN-IN BUTTON
                     Padding(
                       padding: EdgeInsets.only(top: 10),
-                      child: FlatButton(
+                      child: TextButton(
                         onPressed: () => Get.offAllNamed(Routes.HOME),
                         child: Image.asset(
                           "assets/buttons/signin.png",
@@ -298,7 +298,7 @@ class SignView extends GetView<SignController> {
                     //SIGN-IN W G
                     Padding(
                       padding: EdgeInsets.only(top: 10),
-                      child: FlatButton(
+                      child: TextButton(
                         onPressed: () {
                           print("haha");
                         },

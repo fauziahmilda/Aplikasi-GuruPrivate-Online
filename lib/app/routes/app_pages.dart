@@ -44,7 +44,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SETTING,
-      page: () => const SettingView(),
+      page: () => SettingView(),
       binding: SettingBinding(),
     ),
     GetPage(
