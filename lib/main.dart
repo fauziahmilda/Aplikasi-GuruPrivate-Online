@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: "Application",
-            initialRoute: Routes.MESSAGE,
+            initialRoute: Routes.SEARCH,
             getPages: AppPages.routes,
           );
           // return FutureBuilder(

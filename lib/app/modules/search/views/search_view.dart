@@ -17,14 +17,60 @@ class SearchView extends GetView<SearchController> {
         resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xFFD9D9D9),
         appBar: AppBar(
-          title: const Text('Chat'),
+          // title: const Text('Search bar'),
           centerTitle: true,
           elevation: 0,
           backgroundColor: Color(0xFF584A3C),
-          leading: IconButton(
-            onPressed: () => Get.offAllNamed(Routes.HOME),
-            icon: Icon(Icons.arrow_back),
+          // leading: IconButton(
+          //   onPressed: () => Get.offAllNamed(Routes.HOME),
+          //   icon: Icon(Icons.arrow_back),
+          // ),
+          // TextField(
+          //   decoration: InputDecoration(
+          //     fillColor: Colors.white,
+          //     filled: true,
+          //   ),
+          // ),
+          title: Expanded(
+            child: Container(
+              height: 35,
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              // margin: EdgeInsets.only(right: 16),
+              decoration: ShapeDecoration(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: Icon(Icons.arrow_back,
+                        color: Color.fromARGB(255, 87, 87, 87)),
+                  ),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration.collapsed(
+                        hintText: 'Search',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.location_pin),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.filter_list),
+              onPressed: () {},
+            ),
+          ],
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         ),
