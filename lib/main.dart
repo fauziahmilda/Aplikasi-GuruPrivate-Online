@@ -33,27 +33,33 @@ class MyApp extends StatelessWidget {
         if (snapshot.hasError) {
           return const SomethingWentWrong();
         } else if (snapshot.connectionState == ConnectionState.done) {
-          return FutureBuilder(
-              future: Future.delayed(const Duration(seconds: 3)),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const SplashScreen();
-                } else {
-                  //OBX untuk memantau kondisi perubahan var di controller
-                  return Obx(
-                    () => GetMaterialApp(
-                      debugShowCheckedModeBanner: false,
-                      title: "Application",
-                      initialRoute: authC.isSkipIntro.isTrue
-                          ? authC.isAuth.isTrue
-                              ? Routes.HOME
-                              : Routes.LOGIN
-                          : Routes.INTRODUCTION,
-                      getPages: AppPages.routes,
-                    ),
-                  );
-                }
-              });
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: "Application",
+            initialRoute: Routes.MESSAGE,
+            getPages: AppPages.routes,
+          );
+          // return FutureBuilder(
+          //     future: Future.delayed(const Duration(seconds: 2)),
+          //     builder: (context, snapshot) {
+          //       if (snapshot.connectionState == ConnectionState.waiting) {
+          //         return const SplashScreen();
+          //       } else {
+          //         //OBX untuk memantau kondisi perubahan var di controller
+          //         return Obx(
+          //           () => GetMaterialApp(
+          //             debugShowCheckedModeBanner: false,
+          //             title: "Application",
+          //             initialRoute: authC.isSkipIntro.isTrue
+          //                 ? authC.isAuth.isTrue
+          //                     ? Routes.HOME
+          //                     : Routes.LOGIN
+          //                 : Routes.INTRODUCTION,
+          //             getPages: AppPages.routes,
+          //           ),
+          //         );
+          //       }
+          //     });
         }
         return const Loading();
       },

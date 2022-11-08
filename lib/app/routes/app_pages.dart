@@ -56,7 +56,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MESSAGE,
-      page: () => const MessageView(),
+      page: () => MessageView(),
       binding: MessageBinding(),
     ),
     GetPage(
