@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
+import 'app/controllers/auth_controller.dart';
 import 'app/routes/app_pages.dart';
 
 import 'app/utils/error_view.dart';
@@ -23,31 +24,38 @@ void main() {
 
 class MyApp extends StatelessWidget {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  final authC = Get.put(AuthController(), permanent: true);
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
+      future: _initialization,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return SomethingWentWrong();
-        }
-
-        if (snapshot.connectionState == ConnectionState.done) {
+          return const SomethingWentWrong();
+        } else if (snapshot.connectionState == ConnectionState.done) {
           return FutureBuilder(
-              future: Future.delayed(Duration(seconds: 3)),
+              future: Future.delayed(const Duration(seconds: 3)),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const SplashScreen();
                 } else {
-                  return GetMaterialApp(
-                    debugShowCheckedModeBanner: false,
-                    title: "Application",
-                    initialRoute: Routes.MESSAGE,
-                    getPages: AppPages.routes,
+                  //OBX untuk memantau kondisi perubahan var di controller
+                  return Obx(
+                    () => GetMaterialApp(
+                      debugShowCheckedModeBanner: false,
+                      title: "Application",
+                      initialRoute: authC.isSkipIntro.isTrue
+                          ? authC.isAuth.isTrue
+                              ? Routes.HOME
+                              : Routes.LOGIN
+                          : Routes.INTRODUCTION,
+                      getPages: AppPages.routes,
+                    ),
                   );
                 }
               });
         }
-        return Loading();
+        return const Loading();
       },
     );
   }

@@ -59,7 +59,8 @@ class SignView extends GetView<SignController> {
                             alignment: Alignment.center,
                             child: Padding(
                               padding: const EdgeInsets.only(bottom: 6),
-                              child: Text("Login"),
+                              child: Text("Login",
+                                  style: TextStyle(color: Color(0xFF29313d))),
                             ),
                             width: 100,
                           ),
@@ -70,7 +71,10 @@ class SignView extends GetView<SignController> {
                             alignment: Alignment.center,
                             child: Padding(
                               padding: const EdgeInsets.only(bottom: 6),
-                              child: Text("Sign-in"),
+                              child: Text(
+                                "Sign-in",
+                                style: TextStyle(color: Color(0xFF29313d)),
+                              ),
                             ),
                             width: 100,
                             decoration: BoxDecoration(

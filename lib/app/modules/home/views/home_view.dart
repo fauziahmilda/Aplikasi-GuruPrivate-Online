@@ -100,6 +100,8 @@ class HomeView extends GetView<HomeController> {
           //BACKGROUND PALING DALAM
           Expanded(
             child: Container(
+              width: Get.width,
+              height: Get.height,
               color: Color(0xffD9D9D9),
             ),
           ),
@@ -126,7 +128,7 @@ class HomeView extends GetView<HomeController> {
             child: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, left: 30, right: 30),
+                  padding: const EdgeInsets.only(top: 50, left: 30, right: 30),
                   child: Column(
                     children: [
                       Scrollbar(
@@ -425,7 +427,7 @@ class HomeView extends GetView<HomeController> {
             ),
           ),
 
-          //tulisan paling atas
+          //tulisan paling atas: NAMA DAN KELAS
           Container(
             margin: EdgeInsets.only(top: 20, left: 40, right: 40),
             width: Get.width,

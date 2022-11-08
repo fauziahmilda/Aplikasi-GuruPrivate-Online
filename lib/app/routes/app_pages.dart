@@ -6,6 +6,8 @@ import '../modules/detailGuru/bindings/detail_guru_binding.dart';
 import '../modules/detailGuru/views/detail_guru_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/introduction/bindings/introduction_binding.dart';
+import '../modules/introduction/views/introduction_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/message/bindings/message_binding.dart';
@@ -24,7 +26,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  // static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(
@@ -71,6 +73,11 @@ class AppPages {
       name: _Paths.DETAIL_GURU,
       page: () => const DetailGuruView(),
       binding: DetailGuruBinding(),
+    ),
+    GetPage(
+      name: _Paths.INTRODUCTION,
+      page: () => const IntroductionView(),
+      binding: IntroductionBinding(),
     ),
   ];
 }
