@@ -51,7 +51,7 @@ class ChatRoomView extends GetView<ChatRoomController> {
           actions: [
             IconButton(
               icon: const Icon(Icons.call),
-              onPressed: () {},
+              onPressed: () => Get.offAllNamed(Routes.PHONE),
             ),
             IconButton(
               icon: const Icon(Icons.more_vert),
