@@ -70,7 +70,7 @@ class PhoneView extends GetView<PhoneController> {
                 color: Colors.white,
                 child: IconButton(
                     iconSize: 30,
-                    onPressed: () {},
+                    onPressed: () => Get.offAllNamed(Routes.CHAT_ROOM),
                     icon: Icon(
                       Icons.call_end,
                       color: Color.fromARGB(255, 194, 33, 21),
