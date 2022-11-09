@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
+import '../modules/chat_room/bindings/chat_room_binding.dart';
+import '../modules/chat_room/views/chat_room_view.dart';
 import '../modules/detailGuru/bindings/detail_guru_binding.dart';
 import '../modules/detailGuru/views/detail_guru_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -66,7 +68,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SEARCH,
-      page: () => const SearchView(),
+      page: () => SearchView(),
       binding: SearchBinding(),
     ),
     GetPage(
@@ -78,6 +80,11 @@ class AppPages {
       name: _Paths.INTRODUCTION,
       page: () => const IntroductionView(),
       binding: IntroductionBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHAT_ROOM,
+      page: () => const ChatRoomView(),
+      binding: ChatRoomBinding(),
     ),
   ];
 }

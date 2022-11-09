@@ -114,7 +114,7 @@ class SettingView extends GetView<SettingController> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Container(
-                                    width: Get.width * 50 / 100,
+                                    width: Get.width * 0.65,
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,

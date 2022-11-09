@@ -6,16 +6,15 @@ import '../../../routes/app_pages.dart';
 import '../controllers/search_controller.dart';
 
 class SearchView extends GetView<SearchController> {
-  const SearchView({Key? key}) : super(key: key);
-
+  // const SearchView({Key? key}) : super(key: key);
+  final ScrollController _controller = ScrollController();
   @override
   Widget build(BuildContext context) {
     // var appBarWidth = MediaQuery.of(context).size.width;
     // var appBarHeight = AppBar().preferredSize.height;
-    var h = Get.height * 70 / 100;
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Color(0xFFD9D9D9),
+        backgroundColor: Color(0xFFE1E5EA),
         appBar: AppBar(
           // title: const Text('Search bar'),
           centerTitle: true,
@@ -78,7 +77,7 @@ class SearchView extends GetView<SearchController> {
           child: Stack(
             children: [
               Container(
-                color: Color(0xFFD9D9D9),
+                color: Color(0xFFE1E5EA),
                 width: Get.width * 100 / 100,
                 height: 75,
               ),
@@ -141,6 +140,7 @@ class SearchView extends GetView<SearchController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                //tombol filter diatas
                 Wrap(
                   alignment: WrapAlignment.start,
                   children: [
@@ -167,25 +167,37 @@ class SearchView extends GetView<SearchController> {
                     ),
                   ],
                 ),
+                //wadah putih kotak tempat list grid guru
                 ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
                   child: Container(
-                    margin: EdgeInsets.only(right: 10, left: 10, bottom: 10),
+                    margin: EdgeInsets.only(right: 10, left: 10),
                     color: Colors.white,
-                    height: h * 95 / 100,
+                    height: Get.height * 70 / 100,
                     width: Get.width,
+                    //tempat data guru tampil
                     child: Scrollbar(
-                        child: SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            "assets/images/t1.png",
-                            width: 50,
-                          ),
-                        ],
+                      controller: _controller,
+                      // isAlwaysShown: true,
+                      thumbVisibility: true,
+                      child: Padding(
+                        padding: EdgeInsets.all(20),
+                        child: GridView.builder(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisSpacing: 20,
+                                    crossAxisCount: 3,
+                                    mainAxisSpacing: 20),
+                            itemBuilder: (context, index) {
+                              return Container(
+                                color: Colors.amber,
+                                child: Center(
+                                  child: Text("coba ${index + 1}"),
+                                ),
+                              );
+                            }),
                       ),
-                    )),
+                    ),
                   ),
                 ),
               ],

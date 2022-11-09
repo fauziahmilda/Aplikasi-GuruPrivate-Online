@@ -175,40 +175,261 @@ class ProfileView extends GetView<ProfileController> {
                     child: Padding(
                       padding:
                           const EdgeInsets.only(left: 30, right: 30, top: 30),
-                      child: Column(
-                        children: [
-                          //TEXT JUDUL
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "Full Name",
-                              style: TextStyle(
-                                color: Color(0xFF29313D),
-                              ),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            //EDIT FULLNAME
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                //TEXT JUDUL
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 10),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "Full Name",
+                                      style: TextStyle(
+                                        color: Color(0xFF29313D),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                //EDIT
+                                Container(
+                                  width: 350,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Color(0xFF29313D),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.centerRight,
+                                    child: IconButton(
+                                        iconSize: 20,
+                                        onPressed: () {
+                                          openDialog();
+                                        },
+                                        icon: Icon(Icons.edit)),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          //EDIT
-                          Container(
-                            width: 350,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Color(0xFF29313D),
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(5),
+                            //EDIT USERNAME
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                //TEXT JUDUL
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 20),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "Username",
+                                      style: TextStyle(
+                                        color: Color(0xFF29313D),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                //EDIT
+                                Container(
+                                  width: 350,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Color(0xFF29313D),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.centerRight,
+                                    child: IconButton(
+                                        iconSize: 20,
+                                        onPressed: () {
+                                          openDialog();
+                                        },
+                                        icon: Icon(Icons.edit)),
+                                  ),
+                                ),
+                              ],
                             ),
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                              child: IconButton(
-                                  iconSize: 20,
-                                  onPressed: () {
-                                    openDialog();
-                                  },
-                                  icon: Icon(Icons.edit)),
+                            //EDIT EMAIL
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                //TEXT JUDUL
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 20),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "Email",
+                                      style: TextStyle(
+                                        color: Color(0xFF29313D),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                //EDIT
+                                Container(
+                                  width: 350,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Color(0xFF29313D),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.centerRight,
+                                    child: IconButton(
+                                        iconSize: 20,
+                                        onPressed: () {
+                                          openDialog();
+                                        },
+                                        icon: Icon(Icons.edit)),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
+                            //EDIT ADDRESS
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                //TEXT JUDUL
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 20),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "Address",
+                                      style: TextStyle(
+                                        color: Color(0xFF29313D),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                //EDIT
+                                Container(
+                                  width: 350,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Color(0xFF29313D),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.centerRight,
+                                    child: IconButton(
+                                        iconSize: 20,
+                                        onPressed: () {
+                                          openDialog();
+                                        },
+                                        icon: Icon(Icons.edit)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            //EDIT PHONE NUMBER
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                //TEXT JUDUL
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 20),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "Phone Number",
+                                      style: TextStyle(
+                                        color: Color(0xFF29313D),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                //EDIT
+                                Container(
+                                  width: 350,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Color(0xFF29313D),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.centerRight,
+                                    child: IconButton(
+                                        iconSize: 20,
+                                        onPressed: () {
+                                          openDialog();
+                                        },
+                                        icon: Icon(Icons.edit)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            //EDIT PASSWORD
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                //TEXT JUDUL
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 20),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "Password",
+                                      style: TextStyle(
+                                        color: Color(0xFF29313D),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                //EDIT
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 50),
+                                  child: Container(
+                                    width: 350,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(
+                                        color: Color(0xFF29313D),
+                                        width: 1,
+                                      ),
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Align(
+                                      alignment: Alignment.centerRight,
+                                      child: IconButton(
+                                          iconSize: 20,
+                                          onPressed: () {
+                                            openDialog();
+                                          },
+                                          icon: Icon(Icons.edit)),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
