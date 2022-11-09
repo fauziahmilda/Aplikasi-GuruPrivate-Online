@@ -17,6 +17,7 @@ abstract class Routes {
   static const SEARCH_MESSAGE = _Paths.SEARCH_MESSAGE;
   static const SCHEDULE = _Paths.SCHEDULE;
   static const INFORMATION = _Paths.INFORMATION;
+  static const HELP = _Paths.HELP;
 }
 
 abstract class _Paths {
@@ -35,4 +36,5 @@ abstract class _Paths {
   static const SEARCH_MESSAGE = '/search-message';
   static const SCHEDULE = '/schedule';
   static const INFORMATION = '/information';
+  static const HELP = '/help';
 }
