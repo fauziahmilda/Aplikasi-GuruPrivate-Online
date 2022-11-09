@@ -8,6 +8,8 @@ import '../modules/detailGuru/bindings/detail_guru_binding.dart';
 import '../modules/detailGuru/views/detail_guru_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/information/bindings/information_binding.dart';
+import '../modules/information/views/information_view.dart';
 import '../modules/introduction/bindings/introduction_binding.dart';
 import '../modules/introduction/views/introduction_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -99,6 +101,11 @@ class AppPages {
       name: _Paths.SCHEDULE,
       page: () => const ScheduleView(),
       binding: ScheduleBinding(),
+    ),
+    GetPage(
+      name: _Paths.INFORMATION,
+      page: () => const InformationView(),
+      binding: InformationBinding(),
     ),
   ];
 }
