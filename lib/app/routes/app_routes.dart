@@ -19,6 +19,7 @@ abstract class Routes {
   static const INFORMATION = _Paths.INFORMATION;
   static const HELP = _Paths.HELP;
   static const PHONE = _Paths.PHONE;
+  static const LOCATION = _Paths.LOCATION;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const INFORMATION = '/information';
   static const HELP = '/help';
   static const PHONE = '/phone';
+  static const LOCATION = '/location';
 }
