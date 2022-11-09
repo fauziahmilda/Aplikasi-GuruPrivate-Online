@@ -14,6 +14,7 @@ abstract class Routes {
   static const DETAIL_GURU = _Paths.DETAIL_GURU;
   static const INTRODUCTION = _Paths.INTRODUCTION;
   static const CHAT_ROOM = _Paths.CHAT_ROOM;
+  static const SEARCH_MESSAGE = _Paths.SEARCH_MESSAGE;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const DETAIL_GURU = '/detail-guru';
   static const INTRODUCTION = '/introduction';
   static const CHAT_ROOM = '/chat-room';
+  static const SEARCH_MESSAGE = '/search-message';
 }

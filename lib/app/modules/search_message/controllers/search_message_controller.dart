@@ -1,15 +1,7 @@
-import 'package:flutter_app_bazara/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
-class AuthController extends GetxController {
-  //TODO: Implement AuthController
-
-  var isSkipIntro = false.obs;
-  var isAuth = false.obs;
-
-  void login() {
-    Get.offAllNamed(Routes.HOME);
-  }
+class SearchMessageController extends GetxController {
+  //TODO: Implement SearchMessageController
 
   final count = 0.obs;
   @override

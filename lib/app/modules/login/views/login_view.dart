@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_bazara/app/controllers/auth_controller.dart';
 import 'package:flutter_app_bazara/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
@@ -7,7 +8,8 @@ import 'package:get/get.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+  // const LoginView({Key? key}) : super(key: key);
+  final authC = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,9 +148,7 @@ class LoginView extends GetView<LoginController> {
                 Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: TextButton(
-                    onPressed: () {
-                      print("haha");
-                    },
+                    onPressed: () => authC.login(),
                     child: Image.asset(
                       "assets/buttons/g_login.png",
                       width: 274,

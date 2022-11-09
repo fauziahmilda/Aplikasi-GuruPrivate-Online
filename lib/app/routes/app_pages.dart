@@ -18,6 +18,8 @@ import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/search/bindings/search_binding.dart';
 import '../modules/search/views/search_view.dart';
+import '../modules/search_message/bindings/search_message_binding.dart';
+import '../modules/search_message/views/search_message_view.dart';
 import '../modules/setting/bindings/setting_binding.dart';
 import '../modules/setting/views/setting_view.dart';
 import '../modules/sign/bindings/sign_binding.dart';
@@ -38,7 +40,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.LOGIN,
-      page: () => const LoginView(),
+      page: () => LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
@@ -85,6 +87,11 @@ class AppPages {
       name: _Paths.CHAT_ROOM,
       page: () => const ChatRoomView(),
       binding: ChatRoomBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH_MESSAGE,
+      page: () => const SearchMessageView(),
+      binding: SearchMessageBinding(),
     ),
   ];
 }

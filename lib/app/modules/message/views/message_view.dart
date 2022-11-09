@@ -6,11 +6,11 @@ import '../../../routes/app_pages.dart';
 import '../controllers/message_controller.dart';
 
 class MessageView extends GetView<MessageController> {
-  // const MessageView({Key? key}) : super(key: key);
+  MessageView({Key? key}) : super(key: key);
   final List<Widget> myChat = List.generate(
     20,
     (index) => ListTile(
-      onTap: () {},
+      onTap: () => Get.offAllNamed(Routes.CHAT_ROOM),
       leading: CircleAvatar(
         radius: 30,
         backgroundColor: Colors.black26,
@@ -52,9 +52,8 @@ class MessageView extends GetView<MessageController> {
     return Scaffold(
       backgroundColor: Color(0xFF48566A),
       appBar: AppBar(
-        title: const Text('Chat'),
-        centerTitle: true,
         elevation: 0,
+        title: Text("Chat"),
         backgroundColor: Color(0xFF584A3C),
         leading: IconButton(
           onPressed: () => Get.offAllNamed(Routes.HOME),
@@ -62,8 +61,8 @@ class MessageView extends GetView<MessageController> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {},
+            icon: Icon(Icons.search),
+            onPressed: () => Get.offAllNamed(Routes.SEARCH_MESSAGE),
           ),
           IconButton(
             icon: const Icon(Icons.more_vert),
@@ -136,5 +135,41 @@ class MessageView extends GetView<MessageController> {
           itemCount: myChat.length,
           itemBuilder: (context, index) => myChat[index]),
     );
+  }
+}
+
+class itemSearch extends StatelessWidget {
+  const itemSearch({
+    Key? key,
+    // required this.isSearch,
+  }) : super(key: key);
+  // final bool isSearch;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Expanded(
+        child: Container(
+          height: 35,
+          alignment: Alignment.centerLeft,
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          // margin: EdgeInsets.only(right: 16),
+          decoration: ShapeDecoration(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            color: Colors.white,
+          ),
+          child: Expanded(
+            child: TextField(
+              decoration: InputDecoration.collapsed(
+                hintText: 'Search',
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    // : Container(
+    //     child: Text("Chat"),
+    //   );
   }
 }
