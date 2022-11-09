@@ -153,7 +153,7 @@ class SettingView extends GetView<SettingController> {
                                   ),
                                   TextButton(
                                     onPressed: () =>
-                                        Get.offAllNamed(Routes.PROFILE),
+                                        Get.offAllNamed(Routes.SCHEDULE),
                                     child: Image.asset(
                                       "assets/buttons/s2.png",
                                       width: 250,

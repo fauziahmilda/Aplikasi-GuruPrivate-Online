@@ -158,9 +158,10 @@ class ScheduleView extends GetView<ScheduleController> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Icon(
-                    Icons.arrow_back,
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_back),
                     color: Colors.white,
+                    onPressed: () => Get.offAllNamed(Routes.SETTING),
                   ),
                 ),
                 Column(
