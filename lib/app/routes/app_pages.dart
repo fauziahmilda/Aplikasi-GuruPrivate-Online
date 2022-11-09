@@ -18,6 +18,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/message/bindings/message_binding.dart';
 import '../modules/message/views/message_view.dart';
+import '../modules/phone/bindings/phone_binding.dart';
+import '../modules/phone/views/phone_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/schedule/bindings/schedule_binding.dart';
@@ -113,6 +115,11 @@ class AppPages {
       name: _Paths.HELP,
       page: () => const HelpView(),
       binding: HelpBinding(),
+    ),
+    GetPage(
+      name: _Paths.PHONE,
+      page: () => const PhoneView(),
+      binding: PhoneBinding(),
     ),
   ];
 }
