@@ -16,6 +16,8 @@ import '../modules/message/bindings/message_binding.dart';
 import '../modules/message/views/message_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/schedule/bindings/schedule_binding.dart';
+import '../modules/schedule/views/schedule_view.dart';
 import '../modules/search/bindings/search_binding.dart';
 import '../modules/search/views/search_view.dart';
 import '../modules/search_message/bindings/search_message_binding.dart';
@@ -92,6 +94,11 @@ class AppPages {
       name: _Paths.SEARCH_MESSAGE,
       page: () => SearchMessageView(),
       binding: SearchMessageBinding(),
+    ),
+    GetPage(
+      name: _Paths.SCHEDULE,
+      page: () => const ScheduleView(),
+      binding: ScheduleBinding(),
     ),
   ];
 }
