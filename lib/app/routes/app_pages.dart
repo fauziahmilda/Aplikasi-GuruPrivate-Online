@@ -90,7 +90,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SEARCH_MESSAGE,
-      page: () => const SearchMessageView(),
+      page: () => SearchMessageView(),
       binding: SearchMessageBinding(),
     ),
   ];

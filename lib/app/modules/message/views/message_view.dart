@@ -62,7 +62,7 @@ class MessageView extends GetView<MessageController> {
         actions: [
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () => Get.offAllNamed(Routes.SEARCH_MESSAGE),
+            onPressed: () => Get.toNamed(Routes.SEARCH_MESSAGE),
           ),
           IconButton(
             icon: const Icon(Icons.more_vert),
