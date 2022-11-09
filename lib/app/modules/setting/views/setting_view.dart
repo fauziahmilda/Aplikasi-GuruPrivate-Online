@@ -161,7 +161,7 @@ class SettingView extends GetView<SettingController> {
                                   ),
                                   TextButton(
                                     onPressed: () =>
-                                        Get.offAllNamed(Routes.PROFILE),
+                                        Get.offAllNamed(Routes.INFORMATION),
                                     child: Image.asset(
                                       "assets/buttons/s3.png",
                                       width: 250,
@@ -169,7 +169,7 @@ class SettingView extends GetView<SettingController> {
                                   ),
                                   TextButton(
                                     onPressed: () =>
-                                        Get.offAllNamed(Routes.PROFILE),
+                                        Get.offAllNamed(Routes.HELP),
                                     child: Image.asset(
                                       "assets/buttons/s4.png",
                                       width: 250,
