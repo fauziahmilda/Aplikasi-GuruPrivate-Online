@@ -63,7 +63,7 @@ class SearchView extends GetView<SearchController> {
           actions: [
             IconButton(
               icon: const Icon(Icons.location_pin),
-              onPressed: () {},
+              onPressed: () => Get.toNamed(Routes.LOCATION),
             ),
             IconButton(
               icon: const Icon(Icons.filter_list),
