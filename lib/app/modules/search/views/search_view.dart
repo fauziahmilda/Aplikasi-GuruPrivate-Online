@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app_bazara/app/data/data_guru.dart';
+import 'package:flutter_launcher_icons/xml_templates.dart';
 // import 'package:flutter_app_bazara/app/modules/kotakGuru/views/kotak_guru_view.dart';
 
 import 'package:get/get.dart';
@@ -12,6 +13,86 @@ import '../controllers/search_controller.dart';
 class SearchView extends GetView<SearchController> {
   SearchView({Key? key}) : super(key: key);
   final ScrollController _controller = ScrollController();
+
+  Future<void> showFilter(BuildContext context) async {
+    return await showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+            backgroundColor: Color(0xffE1E5EA),
+            insetPadding: EdgeInsets.all(10),
+            contentPadding: EdgeInsets.zero,
+            titlePadding: EdgeInsets.zero,
+            title: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                height: 30,
+                width: Get.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextButton(
+                        onPressed: () => Get.back(),
+                        child: Image.asset("assets/buttons/x2.png")),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Filter",
+                        style: TextStyle(color: Color(0xff29313D)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            content: Container(
+              height: Get.height * 0.6,
+              width: Get.width,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        width: Get.width * 0.4,
+                        height: Get.height * 0.52,
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 60,
+                              width: Get.width * 0.4,
+                              color: Colors.grey,
+                            ),
+                            Container(
+                              height: 60,
+                              width: Get.width * 0.4,
+                              color: Colors.greenAccent,
+                            ),
+                            Container(
+                              height: 60,
+                              width: Get.width * 0.4,
+                              color: Color.fromARGB(255, 138, 165, 139),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: Get.width * 0.55,
+                        height: Get.height * 0.52,
+                        color: Colors.pinkAccent,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     // var appBarWidth = MediaQuery.of(context).size.width;
@@ -151,7 +232,9 @@ class SearchView extends GetView<SearchController> {
                   alignment: WrapAlignment.start,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        await showFilter(context);
+                      },
                       child: Image.asset(
                         "assets/buttons/f-mapel.png",
                         height: 30,
