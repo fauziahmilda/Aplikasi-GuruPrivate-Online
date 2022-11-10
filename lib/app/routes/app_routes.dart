@@ -27,6 +27,7 @@ abstract class Routes {
   static const CART_EDIT = _Paths.CART_EDIT;
   static const PAYMENT = _Paths.PAYMENT;
   static const FAVORITE_GURU = _Paths.FAVORITE_GURU;
+  static const ALL_PACKAGES = _Paths.ALL_PACKAGES;
 }
 
 abstract class _Paths {
@@ -53,4 +54,5 @@ abstract class _Paths {
   static const CART_EDIT = '/cart-edit';
   static const PAYMENT = '/payment';
   static const FAVORITE_GURU = '/favorite-guru';
+  static const ALL_PACKAGES = '/all-packages';
 }

@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/allPackages/bindings/all_packages_binding.dart';
+import '../modules/allPackages/views/all_packages_view.dart';
 import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
 import '../modules/cart_edit/bindings/cart_edit_binding.dart';
@@ -162,6 +164,11 @@ class AppPages {
       name: _Paths.FAVORITE_GURU,
       page: () => const FavoriteGuruView(),
       binding: FavoriteGuruBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALL_PACKAGES,
+      page: () => const AllPackagesView(),
+      binding: AllPackagesBinding(),
     ),
   ];
 }
