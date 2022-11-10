@@ -46,6 +46,8 @@ import '../modules/setting/bindings/setting_binding.dart';
 import '../modules/setting/views/setting_view.dart';
 import '../modules/sign/bindings/sign_binding.dart';
 import '../modules/sign/views/sign_view.dart';
+import '../modules/storyGuru/bindings/story_guru_binding.dart';
+import '../modules/storyGuru/views/story_guru_view.dart';
 
 part 'app_routes.dart';
 
@@ -169,6 +171,11 @@ class AppPages {
       name: _Paths.ALL_PACKAGES,
       page: () => const AllPackagesView(),
       binding: AllPackagesBinding(),
+    ),
+    GetPage(
+      name: _Paths.STORY_GURU,
+      page: () => const StoryGuruView(),
+      binding: StoryGuruBinding(),
     ),
   ];
 }
