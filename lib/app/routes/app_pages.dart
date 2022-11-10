@@ -26,6 +26,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/message/bindings/message_binding.dart';
 import '../modules/message/views/message_view.dart';
+import '../modules/payment/bindings/payment_binding.dart';
+import '../modules/payment/views/payment_view.dart';
 import '../modules/phone/bindings/phone_binding.dart';
 import '../modules/phone/views/phone_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
@@ -148,6 +150,11 @@ class AppPages {
       name: _Paths.CART_EDIT,
       page: () => const CartEditView(),
       binding: CartEditBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYMENT,
+      page: () => const PaymentView(),
+      binding: PaymentBinding(),
     ),
   ];
 }

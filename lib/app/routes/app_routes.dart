@@ -25,6 +25,7 @@ abstract class Routes {
   static const DATA_GURU = _Paths.DATA_GURU;
   static const KOTAK_GURU = _Paths.KOTAK_GURU;
   static const CART_EDIT = _Paths.CART_EDIT;
+  static const PAYMENT = _Paths.PAYMENT;
 }
 
 abstract class _Paths {
@@ -49,4 +50,5 @@ abstract class _Paths {
   static const DATA_GURU = '/data-guru';
   static const KOTAK_GURU = '/kotak-guru';
   static const CART_EDIT = '/cart-edit';
+  static const PAYMENT = '/payment';
 }
