@@ -32,104 +32,84 @@ class LocationView extends GetView<LocationController> {
             // ignore: prefer_const_constructors
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Container(
-              height: 35,
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              // margin: EdgeInsets.only(right: 16),
-              decoration: ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                color: Colors.white,
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    // ignore: prefer_const_constructors
-                    child: Icon(Icons.search,
-                        color: Color.fromARGB(255, 87, 87, 87)),
-                  ),
-                  Expanded(
-                    child: TextField(
-                      controller: controller.searchL,
-                      decoration: InputDecoration.collapsed(
-                        hintText: 'Search',
+      body: Container(
+        height: Get.height,
+        width: Get.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                height: 35,
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                // margin: EdgeInsets.only(right: 16),
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                  color: const Color(0xFFE1E5EA),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: const Icon(Icons.search,
+                          color: Color.fromARGB(255, 87, 87, 87)),
+                    ),
+                    Expanded(
+                      child: TextField(
+                        controller: controller.searchL,
+                        maxLines: 1,
+                        decoration: InputDecoration.collapsed(
+                          hintText: 'Search city, area, or neighbourhood',
+                        ),
                       ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            //ICON CURRENT LOCATIOIN AND CHOOSE ON MAP
+            Container(
+              height: Get.height * 0.07,
+              width: Get.width,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: Image.asset(
+                      "assets/buttons/current-location.png",
+                      width: Get.width * 0.45,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Image.asset(
+                      "assets/buttons/choose-on-map.png",
+                      width: Get.width * 0.45,
                     ),
                   ),
                 ],
               ),
             ),
-          ),
-          //ICON CURRENT LOCATIOIN AND CHOOSE ON MAP
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                  height: 35,
-                  width: Get.width * 0.4,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Icon(Icons.my_location),
-                      Text(
-                        "Use current location",
-                        style: TextStyle(
-                            color: const Color(0xFF29313d),
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
+            //GAMBAR MAP
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Expanded(
+                  child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  "assets/images/map.png",
+                  fit: BoxFit.cover,
+                  height: Get.height * 0.6,
                 ),
-                Container(
-                  height: 35,
-                  width: Get.width * 0.4,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Icon(Icons.map),
-                      Text(
-                        "Choose on map",
-                        style: TextStyle(
-                            color: const Color(0xFF29313d),
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-          //GAMBAR MAP
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Expanded(
-                child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                "assets/images/map.png",
-                fit: BoxFit.cover,
-                height: Get.height * 0.6,
-              ),
-            )),
-          )
-        ],
+              )),
+            )
+          ],
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Stack(
