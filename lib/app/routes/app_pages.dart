@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
+import '../modules/cart_edit/bindings/cart_edit_binding.dart';
+import '../modules/cart_edit/views/cart_edit_view.dart';
 import '../modules/chat_room/bindings/chat_room_binding.dart';
 import '../modules/chat_room/views/chat_room_view.dart';
 import '../modules/dataGuru/bindings/data_guru_binding.dart';
@@ -141,6 +143,11 @@ class AppPages {
       name: _Paths.KOTAK_GURU,
       page: () => KotakGuruView(),
       binding: KotakGuruBinding(),
+    ),
+    GetPage(
+      name: _Paths.CART_EDIT,
+      page: () => const CartEditView(),
+      binding: CartEditBinding(),
     ),
   ];
 }
