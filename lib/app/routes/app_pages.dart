@@ -10,6 +10,8 @@ import '../modules/dataGuru/bindings/data_guru_binding.dart';
 import '../modules/dataGuru/views/data_guru_view.dart';
 import '../modules/detailGuru/bindings/detail_guru_binding.dart';
 import '../modules/detailGuru/views/detail_guru_view.dart';
+import '../modules/favoriteGuru/bindings/favorite_guru_binding.dart';
+import '../modules/favoriteGuru/views/favorite_guru_view.dart';
 import '../modules/help/bindings/help_binding.dart';
 import '../modules/help/views/help_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -155,6 +157,11 @@ class AppPages {
       name: _Paths.PAYMENT,
       page: () => const PaymentView(),
       binding: PaymentBinding(),
+    ),
+    GetPage(
+      name: _Paths.FAVORITE_GURU,
+      page: () => const FavoriteGuruView(),
+      binding: FavoriteGuruBinding(),
     ),
   ];
 }
