@@ -431,9 +431,9 @@ class HomeView extends GetView<HomeController> {
 
           //tulisan paling atas: NAMA DAN KELAS
           Container(
-            margin: EdgeInsets.only(top: 20, left: 40, right: 40),
+            margin: EdgeInsets.only(top: 35, left: 40, right: 40),
             width: Get.width,
-            height: Get.height * 20 / 100,
+            height: Get.height * 17 / 100,
             decoration: BoxDecoration(
               color: Color(0xFF48566A),
               borderRadius: BorderRadius.circular(20),
