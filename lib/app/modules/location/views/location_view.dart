@@ -12,6 +12,7 @@ class LocationView extends GetView<LocationController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFF5D6E89),
       appBar: AppBar(
         title: const Text('Location'),
