@@ -263,7 +263,7 @@ class CartEditView extends GetView<CartEditController> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               IconButton(
-                                  onPressed: () {},
+                                  onPressed: () => Get.toNamed(Routes.PAYMENT),
                                   icon: Icon(
                                     Icons.payment,
                                     color: const Color(0xFF48566A),
