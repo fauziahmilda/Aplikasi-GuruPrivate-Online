@@ -1,11 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LocationController extends GetxController {
-  //TODO: Implement LocationController
+  late TextEditingController searchL;
 
   final count = 0.obs;
   @override
   void onInit() {
+    searchL = TextEditingController();
     super.onInit();
   }
 
@@ -16,6 +18,7 @@ class LocationController extends GetxController {
 
   @override
   void onClose() {
+    searchL.dispose();
     super.onClose();
   }
 

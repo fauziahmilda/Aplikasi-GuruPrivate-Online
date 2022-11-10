@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -135,41 +137,5 @@ class MessageView extends GetView<MessageController> {
           itemCount: myChat.length,
           itemBuilder: (context, index) => myChat[index]),
     );
-  }
-}
-
-class itemSearch extends StatelessWidget {
-  const itemSearch({
-    Key? key,
-    // required this.isSearch,
-  }) : super(key: key);
-  // final bool isSearch;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Expanded(
-        child: Container(
-          height: 35,
-          alignment: Alignment.centerLeft,
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          // margin: EdgeInsets.only(right: 16),
-          decoration: ShapeDecoration(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            color: Colors.white,
-          ),
-          child: Expanded(
-            child: TextField(
-              decoration: InputDecoration.collapsed(
-                hintText: 'Search',
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-    // : Container(
-    //     child: Text("Chat"),
-    //   );
   }
 }

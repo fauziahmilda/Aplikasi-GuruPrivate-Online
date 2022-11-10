@@ -2,7 +2,7 @@
 
 import 'package:get/get.dart';
 
-class InformationController extends GetxController {
+class KotakGuruController extends GetxController {
   final count = 0.obs;
   @override
   void onInit() {

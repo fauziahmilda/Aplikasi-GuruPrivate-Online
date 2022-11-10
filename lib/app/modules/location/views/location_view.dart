@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -13,7 +15,6 @@ class LocationView extends GetView<LocationController> {
       backgroundColor: Color(0xFF5D6E89),
       appBar: AppBar(
         title: const Text('Location'),
-        centerTitle: true,
         elevation: 0,
         backgroundColor: Color(0xFF584A3C),
         leading: Padding(
@@ -28,13 +29,107 @@ class LocationView extends GetView<LocationController> {
           ),
         ),
         shape: RoundedRectangleBorder(
+            // ignore: prefer_const_constructors
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
       ),
-      body: Center(
-        child: Text(
-          'LocationView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Container(
+              height: 35,
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              // margin: EdgeInsets.only(right: 16),
+              decoration: ShapeDecoration(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                color: Colors.white,
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    // ignore: prefer_const_constructors
+                    child: Icon(Icons.search,
+                        color: Color.fromARGB(255, 87, 87, 87)),
+                  ),
+                  Expanded(
+                    child: TextField(
+                      controller: controller.searchL,
+                      decoration: InputDecoration.collapsed(
+                        hintText: 'Search',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          //ICON CURRENT LOCATIOIN AND CHOOSE ON MAP
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  height: 35,
+                  width: Get.width * 0.4,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Icon(Icons.my_location),
+                      Text(
+                        "Use current location",
+                        style: TextStyle(
+                            color: const Color(0xFF29313d),
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 35,
+                  width: Get.width * 0.4,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Icon(Icons.map),
+                      Text(
+                        "Choose on map",
+                        style: TextStyle(
+                            color: const Color(0xFF29313d),
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          //GAMBAR MAP
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Expanded(
+                child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                "assets/images/map.png",
+                fit: BoxFit.cover,
+                height: Get.height * 0.6,
+              ),
+            )),
+          )
+        ],
       ),
       bottomNavigationBar: BottomAppBar(
         child: Stack(

@@ -1,8 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app_bazara/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
-import 'package:flutter/src/widgets/scrollbar.dart';
+// import 'package:flutter/src/widgets/scrollbar.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {

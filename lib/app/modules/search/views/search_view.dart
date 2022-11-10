@@ -1,4 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:flutter_app_bazara/app/data/data_guru.dart';
+// import 'package:flutter_app_bazara/app/modules/kotakGuru/views/kotak_guru_view.dart';
 
 import 'package:get/get.dart';
 
@@ -6,7 +10,7 @@ import '../../../routes/app_pages.dart';
 import '../controllers/search_controller.dart';
 
 class SearchView extends GetView<SearchController> {
-  // const SearchView({Key? key}) : super(key: key);
+  SearchView({Key? key}) : super(key: key);
   final ScrollController _controller = ScrollController();
   @override
   Widget build(BuildContext context) {
@@ -46,11 +50,13 @@ class SearchView extends GetView<SearchController> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 10),
+                    // ignore: prefer_const_constructors
                     child: Icon(Icons.arrow_back,
                         color: Color.fromARGB(255, 87, 87, 87)),
                   ),
                   Expanded(
                     child: TextField(
+                      controller: controller.searchG,
                       decoration: InputDecoration.collapsed(
                         hintText: 'Search',
                       ),
@@ -188,12 +194,12 @@ class SearchView extends GetView<SearchController> {
                                     crossAxisSpacing: 20,
                                     crossAxisCount: 3,
                                     mainAxisSpacing: 20),
+                            itemCount: dataGuru.length,
                             itemBuilder: (context, index) {
                               return Container(
+                                width: 80,
+                                height: 80,
                                 color: Colors.amber,
-                                child: Center(
-                                  child: Text("coba ${index + 1}"),
-                                ),
                               );
                             }),
                       ),

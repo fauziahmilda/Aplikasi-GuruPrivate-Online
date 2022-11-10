@@ -1,6 +1,9 @@
+// ignore_for_file: unnecessary_overrides
+
 import 'package:get/get.dart';
 
 class MessageController extends GetxController {
+  // ignore: todo
   //TODO: Implement MessageController
   final count = 0.obs;
   @override

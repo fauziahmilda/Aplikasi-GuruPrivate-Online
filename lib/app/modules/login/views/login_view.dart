@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_bazara/app/controllers/auth_controller.dart';
@@ -8,7 +10,7 @@ import 'package:get/get.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  // const LoginView({Key? key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
   final authC = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
@@ -27,11 +29,11 @@ class LoginView extends GetView<LoginController> {
           borderRadius: BorderRadius.circular(50),
           child: Container(
             height: 600,
-            color: Color(0xFFD9D9D9),
+            color: const Color(0xFFD9D9D9),
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 40),
+                const Padding(
+                  padding: EdgeInsets.only(top: 40),
                   child: Text(
                     "Login to Your Account",
                     textAlign: TextAlign.center,
@@ -41,19 +43,20 @@ class LoginView extends GetView<LoginController> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                Text("Add your detail to login",
+                const Text("Add your detail to login",
                     style: TextStyle(fontSize: 12)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextButton(
                       onPressed: () {
+                        // ignore: avoid_print
                         print("Login page");
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 6),
+                        child: const Padding(
+                          padding: EdgeInsets.only(bottom: 6),
                           child: Text("Login",
                               style: TextStyle(color: Color(0xFF29313d))),
                         ),
@@ -119,17 +122,18 @@ class LoginView extends GetView<LoginController> {
                                 color: Color(0xFF3C4D58), width: 2))),
                   ),
                 ),
+                //LOGIN
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: TextButton(
-                    onPressed: () => Get.offAllNamed(Routes.HOME),
+                    onPressed: () => authC.login(),
                     child: Image.asset(
                       "assets/buttons/login.png",
                       width: 274,
                     ),
                   ),
                 ),
-                //LOGIN
+                //FORGET PASSWORD
                 Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Text(

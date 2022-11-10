@@ -4,6 +4,8 @@ import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
 import '../modules/chat_room/bindings/chat_room_binding.dart';
 import '../modules/chat_room/views/chat_room_view.dart';
+import '../modules/dataGuru/bindings/data_guru_binding.dart';
+import '../modules/dataGuru/views/data_guru_view.dart';
 import '../modules/detailGuru/bindings/detail_guru_binding.dart';
 import '../modules/detailGuru/views/detail_guru_view.dart';
 import '../modules/help/bindings/help_binding.dart';
@@ -14,6 +16,8 @@ import '../modules/information/bindings/information_binding.dart';
 import '../modules/information/views/information_view.dart';
 import '../modules/introduction/bindings/introduction_binding.dart';
 import '../modules/introduction/views/introduction_view.dart';
+import '../modules/kotakGuru/bindings/kotak_guru_binding.dart';
+import '../modules/kotakGuru/views/kotak_guru_view.dart';
 import '../modules/location/bindings/location_binding.dart';
 import '../modules/location/views/location_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -127,6 +131,16 @@ class AppPages {
       name: _Paths.LOCATION,
       page: () => const LocationView(),
       binding: LocationBinding(),
+    ),
+    GetPage(
+      name: _Paths.DATA_GURU,
+      page: () => const DataGuruView(),
+      binding: DataGuruBinding(),
+    ),
+    GetPage(
+      name: _Paths.KOTAK_GURU,
+      page: () => KotakGuruView(),
+      binding: KotakGuruBinding(),
     ),
   ];
 }

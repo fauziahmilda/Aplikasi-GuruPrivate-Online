@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_bazara/app/routes/app_pages.dart';
@@ -36,6 +38,7 @@ class SignView extends GetView<SignController> {
                       padding: const EdgeInsets.only(top: 20),
                       child: Text(
                         "Create Account",
+                        // ignore: prefer_const_constructors
                         style: TextStyle(
                           color: Color(0xFF3E4A5B),
                           fontSize: 25,
@@ -58,7 +61,7 @@ class SignView extends GetView<SignController> {
                           child: Container(
                             alignment: Alignment.center,
                             child: Padding(
-                              padding: const EdgeInsets.only(bottom: 6),
+                              padding: EdgeInsets.only(bottom: 6),
                               child: Text("Login",
                                   style: TextStyle(color: Color(0xFF29313d))),
                             ),

@@ -1,5 +1,7 @@
 // import 'dart:js';
 
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app_bazara/app/routes/app_pages.dart';
 
@@ -11,48 +13,6 @@ class ProfileView extends GetView<ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    Future openDialog() {
-      return showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          backgroundColor: Color(0xFFE1E5EA),
-          content: TextField(
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Enter your full name",
-              focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: Color(0xFF29313D),
-                ),
-              ),
-            ),
-          ),
-          actions: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                IconButton(
-                    iconSize: 100,
-                    onPressed: () {},
-                    icon: Image.asset(
-                      "assets/buttons/cancel.png",
-                    )),
-                IconButton(
-                    iconSize: 100,
-                    onPressed: () {},
-                    icon: Image.asset(
-                      "assets/buttons/save.png",
-                    )),
-              ],
-            )
-          ],
-        ),
-      );
-    }
-
     void submit() {
       Navigator.of(context).pop();
     }
@@ -208,14 +168,78 @@ class ProfileView extends GetView<ProfileController> {
                                     ),
                                     borderRadius: BorderRadius.circular(5),
                                   ),
-                                  child: Align(
-                                    alignment: Alignment.centerRight,
-                                    child: IconButton(
-                                        iconSize: 20,
-                                        onPressed: () {
-                                          openDialog();
-                                        },
-                                        icon: Icon(Icons.edit)),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: TextField(
+                                            enabled: false,
+                                            controller: controller.nameU,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment: Alignment.centerRight,
+                                        child: IconButton(
+                                            iconSize: 20,
+                                            onPressed: () {
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) =>
+                                                    AlertDialog(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
+                                                  backgroundColor:
+                                                      Color(0xFFE1E5EA),
+                                                  content: TextField(
+                                                    controller:
+                                                        controller.nameU,
+                                                    autofocus: true,
+                                                    decoration: InputDecoration(
+                                                      hintText:
+                                                          "Enter your full name",
+                                                      focusedBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0xFF29313D),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  actions: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      children: [
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/cancel.png",
+                                                            )),
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/save.png",
+                                                            )),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                            icon: Icon(Icons.edit)),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -249,14 +273,78 @@ class ProfileView extends GetView<ProfileController> {
                                     ),
                                     borderRadius: BorderRadius.circular(5),
                                   ),
-                                  child: Align(
-                                    alignment: Alignment.centerRight,
-                                    child: IconButton(
-                                        iconSize: 20,
-                                        onPressed: () {
-                                          openDialog();
-                                        },
-                                        icon: Icon(Icons.edit)),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: TextField(
+                                            enabled: false,
+                                            controller: controller.usernameU,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment: Alignment.centerRight,
+                                        child: IconButton(
+                                            iconSize: 20,
+                                            onPressed: () {
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) =>
+                                                    AlertDialog(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
+                                                  backgroundColor:
+                                                      Color(0xFFE1E5EA),
+                                                  content: TextField(
+                                                    controller:
+                                                        controller.usernameU,
+                                                    autofocus: true,
+                                                    decoration: InputDecoration(
+                                                      hintText:
+                                                          "Change your username",
+                                                      focusedBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0xFF29313D),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  actions: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      children: [
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/cancel.png",
+                                                            )),
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/save.png",
+                                                            )),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                            icon: Icon(Icons.edit)),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -290,14 +378,78 @@ class ProfileView extends GetView<ProfileController> {
                                     ),
                                     borderRadius: BorderRadius.circular(5),
                                   ),
-                                  child: Align(
-                                    alignment: Alignment.centerRight,
-                                    child: IconButton(
-                                        iconSize: 20,
-                                        onPressed: () {
-                                          openDialog();
-                                        },
-                                        icon: Icon(Icons.edit)),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: TextField(
+                                            enabled: false,
+                                            controller: controller.emailU,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment: Alignment.centerRight,
+                                        child: IconButton(
+                                            iconSize: 20,
+                                            onPressed: () {
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) =>
+                                                    AlertDialog(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
+                                                  backgroundColor:
+                                                      Color(0xFFE1E5EA),
+                                                  content: TextField(
+                                                    controller:
+                                                        controller.emailU,
+                                                    autofocus: true,
+                                                    decoration: InputDecoration(
+                                                      hintText:
+                                                          "Change your email",
+                                                      focusedBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0xFF29313D),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  actions: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      children: [
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/cancel.png",
+                                                            )),
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/save.png",
+                                                            )),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                            icon: Icon(Icons.edit)),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -331,14 +483,79 @@ class ProfileView extends GetView<ProfileController> {
                                     ),
                                     borderRadius: BorderRadius.circular(5),
                                   ),
-                                  child: Align(
-                                    alignment: Alignment.centerRight,
-                                    child: IconButton(
-                                        iconSize: 20,
-                                        onPressed: () {
-                                          openDialog();
-                                        },
-                                        icon: Icon(Icons.edit)),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: TextField(
+                                            enabled: false,
+                                            controller: controller.addressU,
+                                            maxLines: 1,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment: Alignment.centerRight,
+                                        child: IconButton(
+                                            iconSize: 20,
+                                            onPressed: () {
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) =>
+                                                    AlertDialog(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
+                                                  backgroundColor:
+                                                      Color(0xFFE1E5EA),
+                                                  content: TextField(
+                                                    controller:
+                                                        controller.addressU,
+                                                    autofocus: true,
+                                                    decoration: InputDecoration(
+                                                      hintText:
+                                                          "Change your address",
+                                                      focusedBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0xFF29313D),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  actions: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      children: [
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/cancel.png",
+                                                            )),
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/save.png",
+                                                            )),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                            icon: Icon(Icons.edit)),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -372,14 +589,78 @@ class ProfileView extends GetView<ProfileController> {
                                     ),
                                     borderRadius: BorderRadius.circular(5),
                                   ),
-                                  child: Align(
-                                    alignment: Alignment.centerRight,
-                                    child: IconButton(
-                                        iconSize: 20,
-                                        onPressed: () {
-                                          openDialog();
-                                        },
-                                        icon: Icon(Icons.edit)),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: TextField(
+                                            enabled: false,
+                                            controller: controller.phoneU,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment: Alignment.centerRight,
+                                        child: IconButton(
+                                            iconSize: 20,
+                                            onPressed: () {
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) =>
+                                                    AlertDialog(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
+                                                  backgroundColor:
+                                                      Color(0xFFE1E5EA),
+                                                  content: TextField(
+                                                    controller:
+                                                        controller.phoneU,
+                                                    autofocus: true,
+                                                    decoration: InputDecoration(
+                                                      hintText:
+                                                          "Change your phone number",
+                                                      focusedBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0xFF29313D),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  actions: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      children: [
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/cancel.png",
+                                                            )),
+                                                        IconButton(
+                                                            iconSize: 100,
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/buttons/save.png",
+                                                            )),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                            icon: Icon(Icons.edit)),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -415,14 +696,83 @@ class ProfileView extends GetView<ProfileController> {
                                       ),
                                       borderRadius: BorderRadius.circular(5),
                                     ),
-                                    child: Align(
-                                      alignment: Alignment.centerRight,
-                                      child: IconButton(
-                                          iconSize: 20,
-                                          onPressed: () {
-                                            openDialog();
-                                          },
-                                          icon: Icon(Icons.edit)),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 10),
+                                            child: TextField(
+                                              obscureText: true,
+                                              obscuringCharacter: "*",
+                                              enabled: false,
+                                              controller: controller.pwU,
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment: Alignment.centerRight,
+                                          child: IconButton(
+                                              iconSize: 20,
+                                              onPressed: () {
+                                                showDialog(
+                                                  context: context,
+                                                  builder: (context) =>
+                                                      AlertDialog(
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                    ),
+                                                    backgroundColor:
+                                                        Color(0xFFE1E5EA),
+                                                    content: TextField(
+                                                      controller:
+                                                          controller.pwU,
+                                                      autofocus: true,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        hintText:
+                                                            "Change your password",
+                                                        focusedBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0xFF29313D),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    actions: [
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceEvenly,
+                                                        children: [
+                                                          IconButton(
+                                                              iconSize: 100,
+                                                              onPressed: () {},
+                                                              icon: Image.asset(
+                                                                "assets/buttons/cancel.png",
+                                                              )),
+                                                          IconButton(
+                                                              iconSize: 100,
+                                                              onPressed: () {},
+                                                              icon: Image.asset(
+                                                                "assets/buttons/save.png",
+                                                              )),
+                                                        ],
+                                                      )
+                                                    ],
+                                                  ),
+                                                );
+                                              },
+                                              icon: Icon(Icons.edit)),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),

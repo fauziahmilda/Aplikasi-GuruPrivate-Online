@@ -2,7 +2,9 @@
 
 import 'package:get/get.dart';
 
-class InformationController extends GetxController {
+class DataGuruController extends GetxController {
+  //TODO: Implement DataGuruController
+
   final count = 0.obs;
   @override
   void onInit() {

@@ -1,9 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_bazara/app/modules/home/views/home_view.dart';
+import 'package:flutter_app_bazara/app/modules/kotakGuru/views/kotak_guru_view.dart';
 
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-
+// import 'package:provider/provider.dart';
 import 'app/controllers/auth_controller.dart';
 import 'app/routes/app_pages.dart';
 
@@ -11,7 +12,6 @@ import 'app/utils/error_view.dart';
 import 'app/utils/loading_view.dart';
 import 'app/widgets/splash.dart';
 
-import 'package:firebase_core/firebase_core.dart';
 // import 'firebase_options.dart';
 
 void main() {
@@ -25,6 +25,8 @@ void main() {
 class MyApp extends StatelessWidget {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   final authC = Get.put(AuthController(), permanent: true);
+
+  MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -33,10 +35,11 @@ class MyApp extends StatelessWidget {
         if (snapshot.hasError) {
           return const SomethingWentWrong();
         } else if (snapshot.connectionState == ConnectionState.done) {
+          // return HomeView();
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: "Application",
-            initialRoute: Routes.PHONE,
+            initialRoute: Routes.HOME,
             getPages: AppPages.routes,
           );
           // return FutureBuilder(

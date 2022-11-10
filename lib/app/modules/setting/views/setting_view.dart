@@ -1,12 +1,19 @@
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
+import 'package:flutter_app_bazara/app/controllers/auth_controller.dart';
 
 import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
+import '../../profile/controllers/profile_controller.dart';
 import '../controllers/setting_controller.dart';
 
 class SettingView extends GetView<SettingController> {
   final ButtonStyle flatButtonStyle = TextButton.styleFrom();
+  final authC = Get.find<AuthController>();
+
+  SettingView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,6 +138,9 @@ class SettingView extends GetView<SettingController> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
+                                            // TextField(
+                                            //   controller: controller.addressU,
+                                            // ),
                                             Text(
                                               "Milda Maulida Fauziah",
                                               style: TextStyle(),
@@ -188,7 +198,7 @@ class SettingView extends GetView<SettingController> {
                             ),
                           ),
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () => authC.logout(),
                               child: Image.asset(
                                 "assets/buttons/logout.png",
                                 width: 274,
