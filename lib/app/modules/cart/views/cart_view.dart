@@ -17,7 +17,7 @@ class CartView extends GetView<CartController> {
         elevation: 0,
         backgroundColor: Color(0xFF7E6A56),
         leading: IconButton(
-          onPressed: () => Get.offAllNamed(Routes.HOME),
+          onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back),
         ),
         shape: RoundedRectangleBorder(
@@ -101,7 +101,9 @@ class MyWidget extends StatelessWidget {
                   ),
                 ),
                 Text("Edit"),
-                IconButton(onPressed: () {}, icon: Icon(Icons.edit))
+                IconButton(
+                    onPressed: () => Get.toNamed(Routes.CART_EDIT),
+                    icon: Icon(Icons.edit))
               ],
             ),
           ),

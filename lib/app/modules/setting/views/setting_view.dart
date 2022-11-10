@@ -67,12 +67,12 @@ class SettingView extends GetView<SettingController> {
                         ),
                         IconButton(
                           iconSize: 60,
-                          onPressed: () => Get.offAllNamed(Routes.HOME),
+                          onPressed: () => Get.toNamed(Routes.HOME),
                           icon: Image.asset("assets/buttons/menu-home.png"),
                         ),
                         IconButton(
                           iconSize: 50,
-                          onPressed: () => Get.offAllNamed(Routes.CART),
+                          onPressed: () => Get.toNamed(Routes.CART),
                           icon: Image.asset(
                             "assets/buttons/menu-cart.png",
                           ),

@@ -21,7 +21,7 @@ class LocationView extends GetView<LocationController> {
           padding: const EdgeInsets.only(left: 10),
           child: IconButton(
             iconSize: 20,
-            onPressed: () => Get.offAllNamed(Routes.SEARCH),
+            onPressed: () => Get.back(),
             icon: Image.asset(
               "assets/buttons/x.png",
               width: 16,

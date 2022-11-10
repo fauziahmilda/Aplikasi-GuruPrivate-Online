@@ -100,7 +100,7 @@ class ScheduleView extends GetView<ScheduleController> {
                       ),
                       IconButton(
                         iconSize: 50,
-                        onPressed: () => Get.offAllNamed(Routes.CART),
+                        onPressed: () => Get.toNamed(Routes.CART),
                         icon: Image.asset(
                           "assets/buttons/menu-cart.png",
                         ),
