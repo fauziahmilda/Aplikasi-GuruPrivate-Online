@@ -256,9 +256,8 @@ class HomeView extends GetView<HomeController> {
                                 fontWeight: FontWeight.bold),
                           ),
                           TextButton(
-                              onPressed: () {
-                                print("lihat semua paket");
-                              },
+                              onPressed: () =>
+                                  Get.offAllNamed(Routes.ALL_PACKAGES),
                               child: Text(
                                 "Lihat Semua >",
                                 style: TextStyle(
@@ -326,9 +325,8 @@ class HomeView extends GetView<HomeController> {
                                 fontWeight: FontWeight.bold),
                           ),
                           TextButton(
-                              onPressed: () {
-                                print("lihat semua fav guru");
-                              },
+                              onPressed: () =>
+                                  Get.offAllNamed(Routes.FAVORITE_GURU),
                               child: Text(
                                 "Lihat Semua >",
                                 style: TextStyle(

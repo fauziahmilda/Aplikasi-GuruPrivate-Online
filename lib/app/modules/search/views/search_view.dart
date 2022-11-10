@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app_bazara/app/data/data_guru.dart';
-import 'package:flutter_launcher_icons/xml_templates.dart';
+// import 'package:flutter_launcher_icons/xml_templates.dart';
 // import 'package:flutter_app_bazara/app/modules/kotakGuru/views/kotak_guru_view.dart';
 
 import 'package:get/get.dart';
@@ -49,13 +49,15 @@ class SearchView extends GetView<SearchController> {
               ),
             ),
             content: Container(
-              height: Get.height * 0.6,
+              height: Get.height * 0.55,
               width: Get.width,
               child: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      //list filter
                       Container(
                         width: Get.width * 0.4,
                         height: Get.height * 0.52,
@@ -64,31 +66,253 @@ class SearchView extends GetView<SearchController> {
                             Container(
                               height: 60,
                               width: Get.width * 0.4,
-                              color: Colors.grey,
+                              color: Color(0xff5D6E89),
+                              child: Align(
+                                  alignment: Alignment.center,
+                                  child: TextButton(
+                                    onPressed: () async {
+                                      await showFilter(context);
+                                    },
+                                    child: Text(
+                                      "Mata Pelajaran",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white),
+                                    ),
+                                  )),
                             ),
                             Container(
                               height: 60,
                               width: Get.width * 0.4,
-                              color: Colors.greenAccent,
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    width: 1,
+                                    color: Color(0xff5D6E89),
+                                  ),
+                                ),
+                              ),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Tingkat",
+                                  style: TextStyle(color: Color(0xff29313D)),
+                                ),
+                              ),
                             ),
                             Container(
                               height: 60,
                               width: Get.width * 0.4,
-                              color: Color.fromARGB(255, 138, 165, 139),
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    width: 1,
+                                    color: Color(0xff5D6E89),
+                                  ),
+                                ),
+                              ),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Kelas",
+                                  style: TextStyle(color: Color(0xff29313D)),
+                                ),
+                              ),
                             ),
                           ],
                         ),
                       ),
+                      //isi filter
                       Container(
-                        width: Get.width * 0.55,
-                        height: Get.height * 0.52,
-                        color: Colors.pinkAccent,
+                        width: 3,
+                        height: Get.height * 0.55,
+                        color: Color(0xff5D6E89),
+                      ),
+                      Container(
+                        width: Get.width * 0.54,
+                        height: Get.height * 0.55,
+                        color: Color(0xff5D6E89),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                width: 200,
+                                height: 40,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.check_box,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        "Matematika",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                width: 200,
+                                height: 40,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.indeterminate_check_box_outlined,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        "Fisika",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                width: 200,
+                                height: 40,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.indeterminate_check_box_outlined,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        "Kimia",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                width: 200,
+                                height: 40,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.indeterminate_check_box_outlined,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        "Biologi",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                width: 200,
+                                height: 40,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.indeterminate_check_box_outlined,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        "Bahasa Indonesia",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                width: 200,
+                                height: 40,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.indeterminate_check_box_outlined,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        "Bahasa Inggris",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   )
                 ],
               ),
             ),
+            actions: [
+              Container(
+                height: Get.height * 0.07,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: Get.width,
+                      height: 1,
+                      color: Colors.brown,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Image.asset(
+                            "assets/buttons/clear-all.png",
+                            width: 110,
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Image.asset(
+                            "assets/buttons/apply.png",
+                            width: 110,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
           );
         });
   }
