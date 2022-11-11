@@ -79,7 +79,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SIGN,
-      page: () => const SignView(),
+      page: () => SignView(),
       binding: SignBinding(),
     ),
     GetPage(

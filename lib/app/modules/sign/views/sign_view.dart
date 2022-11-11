@@ -6,10 +6,12 @@ import 'package:flutter_app_bazara/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
 
+import '../../../controllers/auth_controller.dart';
 import '../controllers/sign_controller.dart';
 
 class SignView extends GetView<SignController> {
-  const SignView({Key? key}) : super(key: key);
+  SignView({Key? key}) : super(key: key);
+  final authC = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -306,9 +308,7 @@ class SignView extends GetView<SignController> {
                     Padding(
                       padding: EdgeInsets.only(top: 10),
                       child: TextButton(
-                        onPressed: () {
-                          print("haha");
-                        },
+                        onPressed: () => authC.signinG(),
                         child: Image.asset(
                           "assets/buttons/g_signin.png",
                           width: 274,

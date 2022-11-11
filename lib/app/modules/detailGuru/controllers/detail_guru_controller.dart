@@ -3,8 +3,6 @@
 import 'package:get/get.dart';
 
 class DetailGuruController extends GetxController {
-  //TODO: Implement DetailGuruController
-
   final count = 0.obs;
   @override
   void onInit() {

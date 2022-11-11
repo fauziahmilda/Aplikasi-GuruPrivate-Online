@@ -1,8 +1,8 @@
+// ignore_for_file: unnecessary_overrides
+
 import 'package:get/get.dart';
 
 class StoryGuruController extends GetxController {
-  //TODO: Implement StoryGuruController
-
   final count = 0.obs;
   @override
   void onInit() {

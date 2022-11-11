@@ -1,8 +1,8 @@
+// ignore_for_file: unnecessary_overrides
+
 import 'package:get/get.dart';
 
 class FavoriteGuruController extends GetxController {
-  //TODO: Implement FavoriteGuruController
-
   final count = 0.obs;
   @override
   void onInit() {

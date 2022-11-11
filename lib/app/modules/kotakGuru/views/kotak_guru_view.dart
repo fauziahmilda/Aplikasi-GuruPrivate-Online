@@ -14,7 +14,7 @@ class KotakGuruView extends GetView<KotakGuruController> {
   @override
   Widget build(BuildContext context) {
     final guruId =
-        ModalRoute.of(context)?.settings?.arguments as String; // is the id!
+        ModalRoute.of(context)?.settings.arguments as String; // is the id!
     final guru = Provider.of<AllGuru>(context).findById(guruId);
     return Scaffold(
       body: Center(

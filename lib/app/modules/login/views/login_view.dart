@@ -126,7 +126,7 @@ class LoginView extends GetView<LoginController> {
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: TextButton(
-                    onPressed: () => authC.login(),
+                    onPressed: () => Get.offAllNamed(Routes.HOME),
                     child: Image.asset(
                       "assets/buttons/login.png",
                       width: 274,
@@ -152,7 +152,7 @@ class LoginView extends GetView<LoginController> {
                 Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: TextButton(
-                    onPressed: () => authC.login(),
+                    onPressed: () => authC.loginG(),
                     child: Image.asset(
                       "assets/buttons/g_login.png",
                       width: 274,
