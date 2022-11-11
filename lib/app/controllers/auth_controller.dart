@@ -1,12 +1,20 @@
 // ignore_for_file: unnecessary_overrides, avoid_print
 
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_app_bazara/app/modules/login/controllers/login_controller.dart';
 import 'package:flutter_app_bazara/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthController extends GetxController {
+  final data = Get.put(LoginController());
+  // final emailU = TextEditingController();
+  // final pwU = TextEditingController();
+  var displayName = ''; //to display user full name when sign in
   var isSkipIntro = false.obs;
   var isAuth = false.obs;
 
@@ -88,6 +96,9 @@ class AuthController extends GetxController {
         //simpan status USER di get storage, skip intro
         final box = GetStorage();
         //simpan di memori hp, selama appnya ga diuninstall, local memori hp
+        if (box.read('skipIntro') != null) {
+          box.remove('skipIntro');
+        }
         box.write('skipIntro', true);
 
         isAuth.value = true;
@@ -102,75 +113,68 @@ class AuthController extends GetxController {
   }
 
   //CONTROLER UNTUK LOGIN MENGGUNAKAN EMAIL DAN PASSWORD
-  Future<void> login() async {
+  Future<void> login(String email, String password) async {
     //BUAT FUNGSI LOGIN DENGAN EMAIL DAN PASSWORD
+    FirebaseAuth auth = FirebaseAuth.instance;
     try {
-      await _googleSignIn.signOut();
-      await _googleSignIn.signIn().then((value) => _currentUser = value);
-      //cek berhasil apa nggak
-      await _googleSignIn.isSignedIn().then((value) {
-        if (value) {
-          //login berhasil
-          print(_currentUser);
-
-          FirebaseAuth.instance
-              .signInWithEmailAndPassword(email: "email", password: "password");
-          isAuth.value = true;
-          Get.offAllNamed(Routes.HOME);
-        } else {
-          //login gagal
-          print("LOGIN GAGAL");
-        }
-      });
-    } catch (error) {
-      print(error);
+      await auth.signInWithEmailAndPassword(email: email, password: password);
+      Get.offAllNamed(Routes.HOME);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        Get.defaultDialog(
+          title: "User Tidak ditemukan",
+          middleText: "Masukkan kombinasi yang tepat.",
+        );
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        Get.defaultDialog(
+          title: "Password Salah",
+          middleText: "Masukkan Password yang tepat.",
+        );
+        print('Wrong password provided for that user.');
+      }
     }
     // Get.offAllNamed(Routes.HOME);
   }
 
 //CONTROLER UNTUK LOGOUT
   Future<void> logout() async {
-    await _googleSignIn.disconnect();
+    await FirebaseAuth.instance.signOut();
+    // await _googleSignIn.disconnect();
     await _googleSignIn.signOut();
+
     Get.offAllNamed(Routes.LOGIN);
+
+    // Get.offAllNamed(Routes.LOGIN);
   }
 
-  //CONTROLLER UNTUK SIGNIN DENGAN GOOGLE
-  Future<void> signinG() async {
-    //BUAT FUNGSI SIGNIN DENGAN GOOGLE
+  //CONTROLLER UNTUK SIGNUP DENGAN GOOGLE
+  Future<void> signup(String name, String email, String username,
+      String address, String phone, String password) async {
+    //BUAT FUNGSI SIGNUP DENGAN GOOGLE
     try {
-      await _googleSignIn
-          .signOut(); //untuk handle kebocoran data user sebelumnya
-
-      //untuk mendapatkan google account: user
-      await _googleSignIn.signIn().then((value) => _currentUser = value);
-      //cek login atau tidak
-      final isSignIn = await _googleSignIn.isSignedIn();
-      if (isSignIn) {
-        print("USER DATA:");
-        print(_currentUser);
-        final googleAuth = await _currentUser!.authentication;
-
-        final credential = GoogleAuthProvider.credential(
-          idToken: googleAuth.idToken,
-          accessToken: googleAuth.accessToken,
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      Get.offAllNamed(Routes.HOME);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        Get.defaultDialog(
+          title: "Password Lemah",
+          middleText: "Masukkan Password yang lebih kuat.",
         );
-
-        await FirebaseAuth.instance
-            .signInWithCredential(credential)
-            .then((value) => userCredential = value);
-        print("USER CREDENTIAL:");
-        print(userCredential);
-
-        isAuth.value = true;
-        Get.offAllNamed(Routes.HOME);
-      } else {
-        print("LOGIN GAGAL");
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        Get.defaultDialog(
+          title: "E-mail telah digunakan",
+          middleText: "Masukkan E-mail lain.",
+        );
+        print('The account already exists for that email.');
       }
-    } catch (error) {
-      print(error);
+    } catch (e) {
+      print(e);
     }
-    // Get.offAllNamed(Routes.HOME);
   }
 
   final count = 0.obs;

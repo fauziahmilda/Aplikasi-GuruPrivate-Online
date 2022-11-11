@@ -6,7 +6,6 @@ import 'package:flutter_app_bazara/app/controllers/auth_controller.dart';
 import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
-import '../../profile/controllers/profile_controller.dart';
 import '../controllers/setting_controller.dart';
 
 class SettingView extends GetView<SettingController> {
