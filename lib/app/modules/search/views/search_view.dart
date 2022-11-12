@@ -1,19 +1,19 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app_bazara/app/data/data_guru.dart';
 // import 'package:flutter_launcher_icons/xml_templates.dart';
-// import 'package:flutter_app_bazara/app/modules/kotakGuru/views/kotak_guru_view.dart';
 
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
 import '../../../routes/app_pages.dart';
 import '../controllers/search_controller.dart';
 
 class SearchView extends GetView<SearchController> {
   SearchView({Key? key}) : super(key: key);
-  final ScrollController _controller = ScrollController();
 
+  final ScrollController _controller = ScrollController();
+  //POPUP FILTER MAPEL
   Future<void> showFilter(BuildContext context) async {
     return await showDialog(
         context: context,
@@ -485,7 +485,7 @@ class SearchView extends GetView<SearchController> {
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   child: Container(
                     margin: EdgeInsets.only(right: 10, left: 10),
-                    color: Colors.white,
+                    color: Color(0xFF7E6A56),
                     height: Get.height * 70 / 100,
                     width: Get.width,
                     //tempat data guru tampil
@@ -494,19 +494,75 @@ class SearchView extends GetView<SearchController> {
                       // isAlwaysShown: true,
                       thumbVisibility: true,
                       child: Padding(
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(10),
                         child: GridView.builder(
+                            shrinkWrap: true,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisSpacing: 20,
-                                    crossAxisCount: 3,
-                                    mainAxisSpacing: 20),
-                            itemCount: dataGuru.length,
+                                    crossAxisSpacing: 10,
+                                    crossAxisCount: 3, //jumlah kolom ke pinggir
+                                    mainAxisSpacing: 10,
+                                    childAspectRatio: 2 / 3.5),
+                            itemCount: 9, //banyak data yang tampil
                             itemBuilder: (context, index) {
-                              return Container(
-                                width: 80,
-                                height: 80,
-                                color: Colors.amber,
+                              return Card(
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Center(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        width: Get.width,
+                                        height: Get.height * 0.12,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.green,
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Image.asset(
+                                            "assets/images/t${index + 1}.png",
+                                            fit: BoxFit.fitWidth,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            top: 10, right: 5, left: 5),
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                              width: Get.width,
+                                              height: 20,
+                                              child: Text("Teacher Name"),
+                                            ),
+                                            Container(
+                                              width: Get.width,
+                                              height: 20,
+                                              child: Text("Teacher Name"),
+                                            ),
+                                            Container(
+                                              width: Get.width,
+                                              height: 20,
+                                              child: Text("Teacher Name"),
+                                            ),
+                                            Container(
+                                              width: Get.width,
+                                              height: 20,
+                                              color: Colors.blue,
+                                              child: Text("Teacher Name"),
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
                               );
                             }),
                       ),

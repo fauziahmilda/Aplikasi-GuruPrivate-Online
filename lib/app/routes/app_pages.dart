@@ -22,8 +22,6 @@ import '../modules/information/bindings/information_binding.dart';
 import '../modules/information/views/information_view.dart';
 import '../modules/introduction/bindings/introduction_binding.dart';
 import '../modules/introduction/views/introduction_view.dart';
-import '../modules/kotakGuru/bindings/kotak_guru_binding.dart';
-import '../modules/kotakGuru/views/kotak_guru_view.dart';
 import '../modules/location/bindings/location_binding.dart';
 import '../modules/location/views/location_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -146,11 +144,6 @@ class AppPages {
       name: _Paths.DATA_GURU,
       page: () => const DataGuruView(),
       binding: DataGuruBinding(),
-    ),
-    GetPage(
-      name: _Paths.KOTAK_GURU,
-      page: () => KotakGuruView(),
-      binding: KotakGuruBinding(),
     ),
     GetPage(
       name: _Paths.CART_EDIT,
