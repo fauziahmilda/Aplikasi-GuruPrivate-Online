@@ -9,6 +9,7 @@ import '../controllers/cart_edit_controller.dart';
 
 class CartEditView extends GetView<CartEditController> {
   const CartEditView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -345,7 +346,7 @@ class CartEditView extends GetView<CartEditController> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async => controller.showDelete(context),
                       child: Image.asset(
                         "assets/buttons/delete-cart.png",
                         width: Get.width * 0.4,
