@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 // import 'package:flutter_launcher_icons/xml_templates.dart';
 
 import 'package:get/get.dart';
@@ -544,18 +545,37 @@ class SearchView extends GetView<SearchController> {
                                             Container(
                                               width: Get.width,
                                               height: 20,
-                                              child: Text("Teacher Name"),
+                                              child: Text("Subject"),
                                             ),
                                             Container(
                                               width: Get.width,
                                               height: 20,
-                                              child: Text("Teacher Name"),
+                                              child: Text("Rp. 100.000,00"),
                                             ),
                                             Container(
                                               width: Get.width,
                                               height: 20,
-                                              color: Colors.blue,
-                                              child: Text("Teacher Name"),
+                                              child: RatingBar.builder(
+                                                initialRating: 5,
+                                                minRating: 5,
+                                                direction: Axis.horizontal,
+                                                // allowHalfRating: true,
+                                                maxRating: 5,
+                                                itemSize: 13,
+                                                itemCount: 5,
+                                                itemPadding: EdgeInsets.only(
+                                                    right: 2, top: 5),
+                                                itemBuilder: (context, _) =>
+                                                    Icon(
+                                                  Icons.star,
+                                                  color: Color.fromARGB(
+                                                      255, 129, 129, 129),
+                                                  size: 10,
+                                                ),
+                                                onRatingUpdate: (rating) {
+                                                  print(rating);
+                                                },
+                                              ),
                                             ),
                                           ],
                                         ),
