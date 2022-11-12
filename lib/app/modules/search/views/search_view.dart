@@ -193,19 +193,17 @@ class SearchView extends GetView<SearchController> {
                       controller: _controller,
                       // isAlwaysShown: true,
                       thumbVisibility: true,
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: GridView.builder(
-                            shrinkWrap: true,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisSpacing: 10,
-                                    crossAxisCount: 3, //jumlah kolom ke pinggir
-                                    mainAxisSpacing: 10,
-                                    childAspectRatio: 2 / 3.5),
-                            itemCount: 9, //banyak data yang tampil
-                            itemBuilder: (context, index) {
-                              return Card(
+                      child: GridView.builder(
+                          shrinkWrap: true,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3, //jumlah kolom ke pinggir
+                                  childAspectRatio: 2 / 3.5),
+                          itemCount: 9, //banyak data yang tampil
+                          itemBuilder: (context, index) {
+                            return TextButton(
+                              onPressed: () => Get.toNamed(Routes.DETAIL_GURU),
+                              child: Card(
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)),
@@ -220,7 +218,6 @@ class SearchView extends GetView<SearchController> {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(10),
-                                          color: Colors.green,
                                         ),
                                         child: ClipRRect(
                                           borderRadius:
@@ -231,6 +228,7 @@ class SearchView extends GetView<SearchController> {
                                           ),
                                         ),
                                       ),
+                                      //list info guru
                                       Padding(
                                         padding: EdgeInsets.only(
                                             top: 10, right: 5, left: 5),
@@ -282,9 +280,9 @@ class SearchView extends GetView<SearchController> {
                                     ],
                                   ),
                                 ),
-                              );
-                            }),
-                      ),
+                              ),
+                            );
+                          }),
                     ),
                   ),
                 ),

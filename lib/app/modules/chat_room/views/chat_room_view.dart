@@ -44,7 +44,7 @@ class ChatRoomView extends GetView<ChatRoomController> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 15),
             child: InkWell(
-              onTap: (() => Get.offAllNamed(Routes.MESSAGE)),
+              onTap: (() => Get.back()),
               child: Icon(
                 Icons.arrow_back,
               ),

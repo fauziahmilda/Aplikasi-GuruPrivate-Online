@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// class Guru {
+//   final int idGuru;
+//   final String nameGuru;
+//   final String description;
+//   final double price;
+
+//   Guru({
+//     required this.idGuru,
+//     required this.nameGuru,
+//     required this.description,
+//     required this.price,
+//   });
+// }
+
 class SearchController extends GetxController {
   late TextEditingController searchG;
+
   RxList<bool> _select = [false, false, false].obs;
   var x = const listFilter();
   var y = const listFilter();
   var z = const listFilter();
-  //data
-  // TextEditingController nameGuru = TextEditingController(text: "Teacher Name");
-
-  // TextEditingController subjectGuru = TextEditingController(text: "Subject");
-  // TextEditingController priceGuru =
-  //     TextEditingController(text: "Rp. 100.000,00");
 
   //FUNGSI TAMPILKAN POPUP FILTER MAPEL
   Future<void> showFilterMapel(BuildContext context) async {
@@ -174,14 +183,22 @@ class SearchController extends GetxController {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.defaultDialog(
+                                title: "Maaf",
+                                middleText: "Layanan ini belum tersedia");
+                          },
                           child: Image.asset(
                             "assets/buttons/clear-all.png",
                             width: 110,
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.defaultDialog(
+                                title: "Maaf",
+                                middleText: "Layanan ini belum tersedia");
+                          },
                           child: Image.asset(
                             "assets/buttons/apply.png",
                             width: 110,
@@ -357,14 +374,22 @@ class SearchController extends GetxController {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.defaultDialog(
+                                title: "Maaf",
+                                middleText: "Layanan ini belum tersedia");
+                          },
                           child: Image.asset(
                             "assets/buttons/clear-all.png",
                             width: 110,
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.defaultDialog(
+                                title: "Maaf",
+                                middleText: "Layanan ini belum tersedia");
+                          },
                           child: Image.asset(
                             "assets/buttons/apply.png",
                             width: 110,
@@ -540,14 +565,22 @@ class SearchController extends GetxController {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.defaultDialog(
+                                title: "Maaf",
+                                middleText: "Layanan ini belum tersedia");
+                          },
                           child: Image.asset(
                             "assets/buttons/clear-all.png",
                             width: 110,
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.defaultDialog(
+                                title: "Maaf",
+                                middleText: "Layanan ini belum tersedia");
+                          },
                           child: Image.asset(
                             "assets/buttons/apply.png",
                             width: 110,
@@ -562,6 +595,8 @@ class SearchController extends GetxController {
           );
         });
   }
+
+  //UNTUK CLEAR BUTTON
 
   final count = 0.obs;
   @override

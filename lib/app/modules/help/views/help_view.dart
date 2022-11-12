@@ -12,6 +12,7 @@ class HelpView extends GetView<HelpController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF48566A),
       appBar: AppBar(
         title: const Text('Help and Support'),
         centerTitle: true,
@@ -25,11 +26,29 @@ class HelpView extends GetView<HelpController> {
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
       ),
       body: Center(
-        child: Text(
-          'HelpView is working',
-          style: TextStyle(fontSize: 20),
+          child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Container(
+          height: Get.height * 0.8,
+          width: Get.width * 0.9,
+          decoration: BoxDecoration(
+              color: Color(0xFFE1E5EA),
+              borderRadius: BorderRadius.circular(10)),
+          child: SingleChildScrollView(
+              child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  child: Text("Help and Support:"),
+                ),
+              ],
+            ),
+          )),
         ),
-      ),
+      )),
     );
   }
 }

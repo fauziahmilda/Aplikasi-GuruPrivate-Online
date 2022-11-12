@@ -12,7 +12,7 @@ class MessageView extends GetView<MessageController> {
   final List<Widget> myChat = List.generate(
     20,
     (index) => ListTile(
-      onTap: () => Get.offAllNamed(Routes.CHAT_ROOM),
+      onTap: () => Get.toNamed(Routes.CHAT_ROOM),
       leading: CircleAvatar(
         radius: 30,
         backgroundColor: Colors.black26,

@@ -20,7 +20,11 @@ class CartEditController extends GetxController {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.defaultDialog(
+                          title: "Maaf",
+                          middleText: "Layanan ini belum tersedia");
+                    },
                     child: Image.asset(
                       "assets/buttons/book-yes.png",
                       width: 110,

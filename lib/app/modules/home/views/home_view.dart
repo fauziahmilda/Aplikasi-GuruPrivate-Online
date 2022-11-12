@@ -345,17 +345,21 @@ class HomeView extends GetView<HomeController> {
                               children: [
                                 Padding(
                                   padding: EdgeInsets.only(left: 5, right: 5),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Container(
-                                      width: 100,
-                                      height: 100,
-                                      color: Color(0xFF5D6E89),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(5),
-                                        child: Image.asset(
-                                          "assets/images/t4.png",
-                                          width: 100,
+                                  child: TextButton(
+                                    onPressed: () =>
+                                        Get.toNamed(Routes.DETAIL_GURU),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        width: 100,
+                                        height: 100,
+                                        color: Color(0xFF5D6E89),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Image.asset(
+                                            "assets/images/t4.png",
+                                            width: 100,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -363,17 +367,21 @@ class HomeView extends GetView<HomeController> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 5, right: 5),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Container(
-                                      width: 100,
-                                      height: 100,
-                                      color: Color(0xFFCBAF87),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(5),
-                                        child: Image.asset(
-                                          "assets/images/t3.png",
-                                          width: 100,
+                                  child: TextButton(
+                                    onPressed: () =>
+                                        Get.toNamed(Routes.DETAIL_GURU),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        width: 100,
+                                        height: 100,
+                                        color: Color(0xFFCBAF87),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Image.asset(
+                                            "assets/images/t3.png",
+                                            width: 100,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -381,17 +389,21 @@ class HomeView extends GetView<HomeController> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 5, right: 5),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Container(
-                                      width: 100,
-                                      height: 100,
-                                      color: Color(0xFF29313D),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(5),
-                                        child: Image.asset(
-                                          "assets/images/t5.png",
-                                          width: 100,
+                                  child: TextButton(
+                                    onPressed: () =>
+                                        Get.toNamed(Routes.DETAIL_GURU),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        width: 100,
+                                        height: 100,
+                                        color: Color(0xFF29313D),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Image.asset(
+                                            "assets/images/t5.png",
+                                            width: 100,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -399,17 +411,21 @@ class HomeView extends GetView<HomeController> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 5, right: 5),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Container(
-                                      width: 100,
-                                      height: 100,
-                                      color: Color(0xFF584A3C),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(5),
-                                        child: Image.asset(
-                                          "assets/images/t7.png",
-                                          width: 100,
+                                  child: TextButton(
+                                    onPressed: () =>
+                                        Get.toNamed(Routes.DETAIL_GURU),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        width: 100,
+                                        height: 100,
+                                        color: Color(0xFF584A3C),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Image.asset(
+                                            "assets/images/t7.png",
+                                            width: 100,
+                                          ),
                                         ),
                                       ),
                                     ),

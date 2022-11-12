@@ -186,7 +186,7 @@ class SettingView extends GetView<SettingController> {
                                   ),
                                   TextButton(
                                     onPressed: () =>
-                                        Get.offAllNamed(Routes.PROFILE),
+                                        controller.showDeleteAccount(context),
                                     child: Image.asset(
                                       "assets/buttons/s5.png",
                                       width: 250,
@@ -197,7 +197,7 @@ class SettingView extends GetView<SettingController> {
                             ),
                           ),
                           TextButton(
-                              onPressed: () => authC.logout(),
+                              onPressed: () => controller.showLogout(context),
                               child: Image.asset(
                                 "assets/buttons/logout.png",
                                 width: 274,
