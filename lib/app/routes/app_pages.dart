@@ -97,7 +97,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DETAIL_GURU,
-      page: () => const DetailGuruView(),
+      page: () => DetailGuruView(),
       binding: DetailGuruBinding(),
     ),
     GetPage(
