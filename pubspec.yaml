@@ -29,6 +29,7 @@ dependencies:
   json_annotation: ^4.7.0
   flutter_rating_bar: ^4.0.1
   flutter_toggle_tab: ^1.2.0
+  table_calendar: ^3.0.8
   # google_maps: ^6.2.0
   # google_maps_flutter: ^2.2.1
   # flutter_screenutil: ^5.5.3+2

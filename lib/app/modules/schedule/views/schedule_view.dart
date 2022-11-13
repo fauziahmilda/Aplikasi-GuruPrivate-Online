@@ -9,8 +9,17 @@ import '../controllers/schedule_controller.dart';
 
 class ScheduleView extends GetView<ScheduleController> {
   const ScheduleView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    void _showDatePicker() {
+      showDateRangePicker(
+        context: context,
+        firstDate: DateTime.now(),
+        lastDate: DateTime(2030),
+      );
+    }
+
     return Scaffold(
       backgroundColor: Color(0xff48566A),
       appBar: AppBar(
@@ -142,9 +151,6 @@ class ScheduleView extends GetView<ScheduleController> {
             height: Get.height,
             margin: EdgeInsets.only(top: 100),
             color: Color(0xff48566A),
-            child: ListView(
-              children: [],
-            ),
           ),
 
           //tulisan paling atas: SCHEDULE
