@@ -84,6 +84,7 @@ class CartEditView extends GetView<CartEditController> {
                         child: Column(
                           children: [
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 IconButton(
                                     onPressed: () {},
@@ -93,11 +94,11 @@ class CartEditView extends GetView<CartEditController> {
                                     )),
                                 Container(
                                   height: 45,
-                                  width: 100,
+                                  width: 110,
                                   child: TextField(
-                                    style: TextStyle(fontSize: 18),
+                                    style: TextStyle(fontSize: 14),
                                     decoration: InputDecoration(
-                                      hintText: "Subjects",
+                                      hintText: "Wed, 20 Jul 2022",
                                       border: InputBorder.none,
                                     ),
                                   ),
@@ -132,11 +133,11 @@ class CartEditView extends GetView<CartEditController> {
                                     )),
                                 Container(
                                   height: 45,
-                                  width: 100,
+                                  width: 110,
                                   child: TextField(
-                                    style: TextStyle(fontSize: 18),
+                                    style: TextStyle(fontSize: 14),
                                     decoration: InputDecoration(
-                                      hintText: "Subjects",
+                                      hintText: "00:00 - 00:00",
                                       border: InputBorder.none,
                                     ),
                                   ),
@@ -170,7 +171,8 @@ class CartEditView extends GetView<CartEditController> {
                     Align(
                       alignment: Alignment.topLeft,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () async =>
+                            controller.showBookingDate(context),
                         child: Image.asset(
                           "assets/buttons/choose-another-day.png",
                           height: 35,

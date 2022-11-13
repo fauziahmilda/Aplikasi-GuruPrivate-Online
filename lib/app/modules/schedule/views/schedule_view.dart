@@ -3,23 +3,48 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 import '../../../routes/app_pages.dart';
 import '../controllers/schedule_controller.dart';
 
 class ScheduleView extends GetView<ScheduleController> {
-  const ScheduleView({Key? key}) : super(key: key);
+  ScheduleView({Key? key}) : super(key: key);
+
+  final List<Widget> mySchedule = List.generate(
+    8,
+    (index) => ListTile(
+      visualDensity: VisualDensity(horizontal: -4, vertical: -4),
+      leading: CircleAvatar(
+        radius: 4,
+        backgroundColor: Colors.black26,
+        child: Image.asset(
+          "assets/buttons/dot.png",
+          fit: BoxFit.cover,
+        ),
+      ),
+      horizontalTitleGap: 0,
+      title: Text(
+        "0${index + 1}/${index + 1}/2022",
+        style: TextStyle(
+          color: Color(0xff29313D),
+          fontWeight: FontWeight.normal,
+        ),
+      ),
+      contentPadding: EdgeInsets.zero,
+      trailing: Text(
+        "Subject",
+        style: TextStyle(
+          color: Color(0xff29313D),
+          fontWeight: FontWeight.normal,
+        ),
+      ),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
-    void _showDatePicker() {
-      showDateRangePicker(
-        context: context,
-        firstDate: DateTime.now(),
-        lastDate: DateTime(2030),
-      );
-    }
-
     return Scaffold(
       backgroundColor: Color(0xff48566A),
       appBar: AppBar(
@@ -149,8 +174,129 @@ class ScheduleView extends GetView<ScheduleController> {
           Container(
             width: Get.width,
             height: Get.height,
-            margin: EdgeInsets.only(top: 100),
+            margin: EdgeInsets.only(top: 80),
             color: Color(0xff48566A),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  height: Get.height * 0.4,
+                  width: Get.width * 0.75,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: SingleChildScrollView(
+                    child: TableCalendar(
+                      rowHeight: 40,
+                      calendarFormat: CalendarFormat.month,
+                      rangeSelectionMode: RangeSelectionMode.toggledOn,
+                      focusedDay: DateTime.now(),
+                      firstDay: DateTime(2019),
+                      lastDay: DateTime(2030),
+                      selectedDayPredicate: (day) =>
+                          isSameDay(day, DateTime.now()),
+                      headerStyle: HeaderStyle(
+                        headerMargin: EdgeInsets.only(bottom: 10),
+                        headerPadding: EdgeInsets.zero,
+                        formatButtonVisible: false,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF7E6A56),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          ),
+                        ),
+                        titleTextStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                        leftChevronIcon: Icon(
+                          Icons.chevron_left,
+                          color: Colors.white,
+                          size: 28,
+                        ),
+                        rightChevronIcon: Icon(
+                          Icons.chevron_right,
+                          color: Colors.white,
+                          size: 28,
+                        ),
+                      ),
+                      // Calendar Days Styling
+                      daysOfWeekStyle: const DaysOfWeekStyle(
+                        // Weekend days color (Sat,Sun)
+                        weekendStyle: TextStyle(color: Colors.redAccent),
+                      ),
+                      // Calendar Dates styling
+                      calendarStyle: const CalendarStyle(
+                        // Weekend dates color (Sat & Sun Column)
+                        weekendTextStyle: TextStyle(color: Colors.redAccent),
+                        // highlighted color for today
+                        todayDecoration: BoxDecoration(
+                          color: Color(0xff5D6E89),
+                          shape: BoxShape.circle,
+                        ),
+                        // highlighted color for selected day
+                        selectedDecoration: BoxDecoration(
+                          color: Color(0xff5D6E89),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: Get.height * 0.18,
+                  width: Get.width * 0.75,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 40),
+                          child: Container(
+                            height: 50,
+                            width: Get.width,
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "Schedule this month",
+                                style: TextStyle(
+                                    color: Color(0xff29313D),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: Get.width,
+                          height: 1,
+                          color: Colors.brown,
+                        ),
+                        Expanded(
+                          child: Container(
+                              width: Get.width,
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: ListView.builder(
+                                    itemCount: mySchedule.length,
+                                    itemBuilder: (context, index) =>
+                                        mySchedule[index]),
+                              )),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
 
           //tulisan paling atas: SCHEDULE

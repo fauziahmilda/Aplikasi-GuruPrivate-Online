@@ -458,7 +458,7 @@ class HomeView extends GetView<HomeController> {
                   alignment: Alignment.topLeft,
                   margin: EdgeInsets.only(left: 30, top: 25),
                   child: Text(
-                    "Milda Maulida Fauziah",
+                    "Unknown User",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
@@ -476,7 +476,7 @@ class HomeView extends GetView<HomeController> {
                   alignment: Alignment.topLeft,
                   margin: EdgeInsets.only(left: 30, right: 30, top: 25),
                   child: Text(
-                    "12 MIPA",
+                    "Unknown Class",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,

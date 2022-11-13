@@ -221,13 +221,19 @@ class ProfileView extends GetView<ProfileController> {
                                                       children: [
                                                         IconButton(
                                                             iconSize: 100,
-                                                            onPressed: () {},
+                                                            onPressed: () =>
+                                                                Get.back(),
                                                             icon: Image.asset(
                                                               "assets/buttons/cancel.png",
                                                             )),
                                                         IconButton(
                                                             iconSize: 100,
-                                                            onPressed: () {},
+                                                            onPressed: () {
+                                                              Get.defaultDialog(
+                                                                  title: "Maaf",
+                                                                  middleText:
+                                                                      "Layanan ini belum tersedia");
+                                                            },
                                                             icon: Image.asset(
                                                               "assets/buttons/save.png",
                                                             )),

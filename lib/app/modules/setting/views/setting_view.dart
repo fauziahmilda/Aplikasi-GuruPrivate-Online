@@ -141,10 +141,10 @@ class SettingView extends GetView<SettingController> {
                                             //   controller: controller.addressU,
                                             // ),
                                             Text(
-                                              "Milda Maulida Fauziah",
+                                              "Unknown User",
                                               style: TextStyle(),
                                             ),
-                                            Text("12 SMA")
+                                            Text("Unknown Class")
                                           ],
                                         ),
                                       ],
