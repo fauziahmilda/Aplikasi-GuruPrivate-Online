@@ -66,7 +66,10 @@ class SearchView extends GetView<SearchController> {
             ),
             IconButton(
               icon: const Icon(Icons.filter_list),
-              onPressed: () {},
+              onPressed: () {
+                Get.defaultDialog(
+                    title: "Maaf", middleText: "Layanan ini belum tersedia");
+              },
             ),
           ],
           shape: RoundedRectangleBorder(

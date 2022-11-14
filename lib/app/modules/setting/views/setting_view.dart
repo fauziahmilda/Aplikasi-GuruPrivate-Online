@@ -137,12 +137,8 @@ class SettingView extends GetView<SettingController> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            // TextField(
-                                            //   controller: controller.addressU,
-                                            // ),
                                             Text(
                                               "Unknown User",
-                                              style: TextStyle(),
                                             ),
                                             Text("Unknown Class")
                                           ],

@@ -113,7 +113,9 @@ class ProfileView extends GetView<ProfileController> {
                     ),
                     IconButton(
                       onPressed: (() {
-                        print("ganti foto profile");
+                        Get.defaultDialog(
+                            title: "Maaf",
+                            middleText: "Layanan ini belum tersedia");
                       }),
                       icon: Icon(Icons.camera_alt),
                       color: Colors.white,
