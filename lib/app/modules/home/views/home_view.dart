@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_bazara/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
-// import 'package:flutter/src/widgets/scrollbar.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -65,10 +64,12 @@ class HomeView extends GetView<HomeController> {
                           "assets/buttons/menu-msg.png",
                         ),
                       ),
-                      IconButton(
-                        iconSize: 50,
-                        onPressed: () => Get.offAllNamed(Routes.SEARCH),
-                        icon: Image.asset("assets/buttons/menu-scr.png"),
+                      InkWell(
+                        onTap: () => Get.offAllNamed(Routes.SEARCH),
+                        child: Image.asset(
+                          "assets/buttons/menu-scr.png",
+                          width: 50,
+                        ),
                       ),
                       IconButton(
                         iconSize: 60,

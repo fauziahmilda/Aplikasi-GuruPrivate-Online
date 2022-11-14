@@ -1,29 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-// class Guru {
-//   final int idGuru;
-//   final String nameGuru;
-//   final String description;
-//   final double price;
-
-//   Guru({
-//     required this.idGuru,
-//     required this.nameGuru,
-//     required this.description,
-//     required this.price,
-//   });
-// }
-
 class SearchController extends GetxController {
-  late TextEditingController searchG;
-
   RxList<bool> _select = [false, false, false].obs;
-  var x = listFilter();
-  var y = listFilter2();
-  var z = listFilter3();
-
-  var checkBool = false.obs;
 
   //FUNGSI TAMPILKAN POPUP FILTER MAPEL
   Future<void> showFilterMapel(BuildContext context) async {
@@ -161,7 +140,7 @@ class SearchController extends GetxController {
                           padding: const EdgeInsets.all(10),
                           //wadah list mapel
                           child: Column(
-                            children: [x],
+                            children: [ListFilter()],
                           ),
                         ),
                       ),
@@ -352,7 +331,7 @@ class SearchController extends GetxController {
                           padding: const EdgeInsets.all(10),
                           //wadah list mapel
                           child: Column(
-                            children: [y],
+                            children: [ListFilter2()],
                           ),
                         ),
                       ),
@@ -473,13 +452,25 @@ class SearchController extends GetxController {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "Mata Pelajaran",
-                                      style:
-                                          TextStyle(color: Color(0xff29313D)),
-                                    ),
-                                  ),
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "Mata Pelajaran",
+                                        style:
+                                            TextStyle(color: Color(0xff29313D)),
+                                      )),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: Get.width * 0.4,
+                                  color: Color(0xff5D6E89),
+                                  child: Align(
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "Tingkat",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white),
+                                      )),
                                 ),
                                 Container(
                                   height: 60,
@@ -493,25 +484,13 @@ class SearchController extends GetxController {
                                     ),
                                   ),
                                   child: Align(
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "Tingkat",
-                                        style:
-                                            TextStyle(color: Color(0xff29313D)),
-                                      )),
-                                ),
-                                Container(
-                                  height: 60,
-                                  width: Get.width * 0.4,
-                                  color: Color(0xff5D6E89),
-                                  child: Align(
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "Kelas",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white),
-                                      )),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "Kelas",
+                                      style:
+                                          TextStyle(color: Color(0xff29313D)),
+                                    ),
+                                  ),
                                 ),
                               ],
                               isSelected: _select,
@@ -543,7 +522,7 @@ class SearchController extends GetxController {
                           padding: const EdgeInsets.all(10),
                           //wadah list mapel
                           child: Column(
-                            children: [z],
+                            children: [ListFilter3()],
                           ),
                         ),
                       ),
@@ -603,7 +582,6 @@ class SearchController extends GetxController {
   final count = 0.obs;
   @override
   void onInit() {
-    searchG = TextEditingController();
     super.onInit();
   }
 
@@ -614,15 +592,14 @@ class SearchController extends GetxController {
 
   @override
   void onClose() {
-    searchG.dispose();
     super.onClose();
   }
 
   void increment() => count.value++;
 }
 
-class listFilter extends StatelessWidget {
-  listFilter({super.key});
+class ListFilter extends StatelessWidget {
+  ListFilter({super.key});
   final SearchController ctrl = Get.put(SearchController());
 
   @override
@@ -771,8 +748,8 @@ class listFilter extends StatelessWidget {
   }
 }
 
-class listFilter2 extends StatelessWidget {
-  listFilter2({super.key});
+class ListFilter2 extends StatelessWidget {
+  ListFilter2({super.key});
   final SearchController ctrl = Get.put(SearchController());
 
   @override
@@ -877,8 +854,8 @@ class listFilter2 extends StatelessWidget {
   }
 }
 
-class listFilter3 extends StatelessWidget {
-  listFilter3({super.key});
+class ListFilter3 extends StatelessWidget {
+  ListFilter3({super.key});
   final SearchController ctrl = Get.put(SearchController());
 
   @override

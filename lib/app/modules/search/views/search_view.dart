@@ -28,16 +28,6 @@ class SearchView extends GetView<SearchController> {
           centerTitle: true,
           elevation: 0,
           backgroundColor: Color(0xFF584A3C),
-          // leading: IconButton(
-          //   onPressed: () => Get.offAllNamed(Routes.HOME),
-          //   icon: Icon(Icons.arrow_back),
-          // ),
-          // TextField(
-          //   decoration: InputDecoration(
-          //     fillColor: Colors.white,
-          //     filled: true,
-          //   ),
-          // ),
           title: Expanded(
             child: Container(
               height: 35,
@@ -60,7 +50,6 @@ class SearchView extends GetView<SearchController> {
                   ),
                   Expanded(
                     child: TextField(
-                      controller: controller.searchG,
                       decoration: InputDecoration.collapsed(
                         hintText: 'Search',
                       ),
@@ -77,10 +66,7 @@ class SearchView extends GetView<SearchController> {
             ),
             IconButton(
               icon: const Icon(Icons.filter_list),
-              onPressed: () {
-                Get.defaultDialog(
-                    title: "Maaf", middleText: "Layanan ini belum tersedia");
-              },
+              onPressed: () {},
             ),
           ],
           shape: RoundedRectangleBorder(
