@@ -29,6 +29,7 @@ abstract class Routes {
   static const FAVORITE_GURU = _Paths.FAVORITE_GURU;
   static const ALL_PACKAGES = _Paths.ALL_PACKAGES;
   static const STORY_GURU = _Paths.STORY_GURU;
+  static const ALL_PACKAGES = _Paths.ALL_PACKAGES;
 }
 
 abstract class _Paths {
@@ -57,4 +58,5 @@ abstract class _Paths {
   static const FAVORITE_GURU = '/favorite-guru';
   static const ALL_PACKAGES = '/all-packages';
   static const STORY_GURU = '/story-guru';
+  static const ALL_PACKAGES = '/all-packages';
 }
