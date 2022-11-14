@@ -19,9 +19,11 @@ class SearchController extends GetxController {
   late TextEditingController searchG;
 
   RxList<bool> _select = [false, false, false].obs;
-  var x = const listFilter();
-  var y = const listFilter();
-  var z = const listFilter();
+  var x = listFilter();
+  var y = listFilter2();
+  var z = listFilter3();
+
+  var checkBool = false.obs;
 
   //FUNGSI TAMPILKAN POPUP FILTER MAPEL
   Future<void> showFilterMapel(BuildContext context) async {
@@ -350,7 +352,7 @@ class SearchController extends GetxController {
                           padding: const EdgeInsets.all(10),
                           //wadah list mapel
                           child: Column(
-                            children: [x],
+                            children: [y],
                           ),
                         ),
                       ),
@@ -541,7 +543,7 @@ class SearchController extends GetxController {
                           padding: const EdgeInsets.all(10),
                           //wadah list mapel
                           child: Column(
-                            children: [x],
+                            children: [z],
                           ),
                         ),
                       ),
@@ -620,7 +622,8 @@ class SearchController extends GetxController {
 }
 
 class listFilter extends StatelessWidget {
-  const listFilter({super.key});
+  listFilter({super.key});
+  final SearchController ctrl = Get.put(SearchController());
 
   @override
   Widget build(BuildContext context) {
@@ -638,7 +641,7 @@ class listFilter extends StatelessWidget {
                 IconButton(
                   onPressed: () {},
                   icon: Icon(
-                    Icons.check_box,
+                    Icons.indeterminate_check_box,
                     color: Colors.white,
                   ),
                 ),
@@ -756,6 +759,196 @@ class listFilter extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Bahasa Inggris",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class listFilter2 extends StatelessWidget {
+  listFilter2({super.key});
+  final SearchController ctrl = Get.put(SearchController());
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          //list mapel
+          Container(
+            width: 200,
+            height: 40,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.indeterminate_check_box,
+                    color: Colors.white,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "SD",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: 200,
+            height: 40,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.indeterminate_check_box_outlined,
+                    color: Colors.white,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "SMP",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: 200,
+            height: 40,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.indeterminate_check_box_outlined,
+                    color: Colors.white,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "SMA",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: 200,
+            height: 40,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.indeterminate_check_box_outlined,
+                    color: Colors.white,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "GAP YEAR",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class listFilter3 extends StatelessWidget {
+  listFilter3({super.key});
+  final SearchController ctrl = Get.put(SearchController());
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          //list mapel
+          Container(
+            width: 200,
+            height: 40,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.indeterminate_check_box,
+                    color: Colors.white,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "10",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: 200,
+            height: 40,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.indeterminate_check_box_outlined,
+                    color: Colors.white,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "11",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: 200,
+            height: 40,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.indeterminate_check_box_outlined,
+                    color: Colors.white,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "12",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

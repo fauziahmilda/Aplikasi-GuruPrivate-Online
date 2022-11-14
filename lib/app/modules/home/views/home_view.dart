@@ -144,37 +144,77 @@ class HomeView extends GetView<HomeController> {
                               children: [
                                 Padding(
                                   padding: EdgeInsets.only(left: 6, right: 6),
-                                  child: Image.asset(
-                                    "assets/images/tname.png",
-                                    width: 70,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/tname.png",
+                                      width: 70,
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 6, right: 6),
-                                  child: Image.asset(
-                                    "assets/images/tname.png",
-                                    width: 70,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/tname.png",
+                                      width: 70,
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 6, right: 6),
-                                  child: Image.asset(
-                                    "assets/images/tname.png",
-                                    width: 70,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/tname.png",
+                                      width: 70,
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 6, right: 6),
-                                  child: Image.asset(
-                                    "assets/images/tname.png",
-                                    width: 70,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/tname.png",
+                                      width: 70,
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 6, right: 6),
-                                  child: Image.asset(
-                                    "assets/images/tname.png",
-                                    width: 70,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/tname.png",
+                                      width: 70,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -200,37 +240,77 @@ class HomeView extends GetView<HomeController> {
                               children: [
                                 Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
-                                  child: Image.asset(
-                                    "assets/images/mapel1.png",
-                                    width: 50,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/mapel1.png",
+                                      width: 50,
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
-                                  child: Image.asset(
-                                    "assets/images/mapel2.png",
-                                    width: 50,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/mapel2.png",
+                                      width: 50,
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
-                                  child: Image.asset(
-                                    "assets/images/mapel3.png",
-                                    width: 50,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/mapel3.png",
+                                      width: 50,
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
-                                  child: Image.asset(
-                                    "assets/images/mapel4.png",
-                                    width: 50,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/mapel4.png",
+                                      width: 50,
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 10, right: 10),
-                                  child: Image.asset(
-                                    "assets/images/mapel5.png",
-                                    width: 53,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Get.defaultDialog(
+                                          title: "Maaf",
+                                          middleText:
+                                              "Layanan ini belum tersedia");
+                                    },
+                                    child: Image.asset(
+                                      "assets/images/mapel5.png",
+                                      width: 50,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -498,31 +578,3 @@ class HomeView extends GetView<HomeController> {
     );
   }
 }
-
-// class ClipPathClass extends CustomClipper<Path> {
-//   @override
-//   Path getClip(Size size) {
-//     var path = Path();
-//     path.lineTo(0.0, size.height);
-
-//     var firstControlPoint = Offset(size.width / 4, size.height);
-//     var firstPoint = Offset(size.width / 2, size.height);
-
-//     path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
-//         firstPoint.dx, firstPoint.dy);
-
-//     var secondControlPoint = Offset(size.width - (size.width / 4), size.height);
-//     var secondPoint = Offset(size.width, size.height - 50);
-
-//     path.quadraticBezierTo(secondControlPoint.dx, secondControlPoint.dy,
-//         secondPoint.dx, secondPoint.dy);
-
-//     path.lineTo(size.width, 0.0);
-//     path.close();
-
-//     return path;
-//   }
-
-//   @override
-//   bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
-// }

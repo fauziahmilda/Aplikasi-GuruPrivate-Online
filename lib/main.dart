@@ -36,36 +36,36 @@ class MyApp extends StatelessWidget {
           return const SomethingWentWrong();
         } else if (snapshot.connectionState == ConnectionState.done) {
           // return HomeView();
-          return GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: "Application",
-            initialRoute: Routes.HOME,
-            getPages: AppPages.routes,
-          );
-          // return FutureBuilder(
-          //   future: Future.delayed(const Duration(seconds: 2)),
-          //   builder: (context, snapshot) {
-          //     if (snapshot.connectionState == ConnectionState.done) {
-          //       //OBX untuk memantau kondisi perubahan var di controller
-          //       return Obx(
-          //         () => GetMaterialApp(
-          //           debugShowCheckedModeBanner: false,
-          //           title: "App Guru Private Online",
-          //           initialRoute: authC.isSkipIntro.isTrue
-          //               ? authC.isAuth.isTrue
-          //                   ? Routes.HOME
-          //                   : Routes.LOGIN
-          //               : Routes.INTRODUCTION,
-          //           getPages: AppPages.routes,
-          //         ),
-          //       );
-          //     } else {
-          //       return FutureBuilder(
-          //           future: authC.firstInitialized(),
-          //           builder: (context, snapshot) => SplashScreen());
-          //     }
-          //   },
+          // return GetMaterialApp(
+          //   debugShowCheckedModeBanner: false,
+          //   title: "Application",
+          //   initialRoute: Routes.HOME,
+          //   getPages: AppPages.routes,
           // );
+          return FutureBuilder(
+            future: Future.delayed(const Duration(seconds: 2)),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                //OBX untuk memantau kondisi perubahan var di controller
+                return Obx(
+                  () => GetMaterialApp(
+                    debugShowCheckedModeBanner: false,
+                    title: "App Guru Private Online",
+                    initialRoute: authC.isSkipIntro.isTrue
+                        ? authC.isAuth.isTrue
+                            ? Routes.HOME
+                            : Routes.LOGIN
+                        : Routes.INTRODUCTION,
+                    getPages: AppPages.routes,
+                  ),
+                );
+              } else {
+                return FutureBuilder(
+                    future: authC.firstInitialized(),
+                    builder: (context, snapshot) => SplashScreen());
+              }
+            },
+          );
         }
         return const Loading();
       },

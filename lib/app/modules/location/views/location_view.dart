@@ -80,14 +80,22 @@ class LocationView extends GetView<LocationController> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.defaultDialog(
+                          title: "Maaf",
+                          middleText: "Layanan ini belum tersedia");
+                    },
                     child: Image.asset(
                       "assets/buttons/current-location.png",
                       width: Get.width * 0.45,
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.defaultDialog(
+                          title: "Maaf",
+                          middleText: "Layanan ini belum tersedia");
+                    },
                     child: Image.asset(
                       "assets/buttons/choose-on-map.png",
                       width: Get.width * 0.45,
