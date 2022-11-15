@@ -40,14 +40,22 @@ class CartView extends GetView<CartController> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.defaultDialog(
+                            title: "Maaf",
+                            middleText: "Layanan ini belum tersedia");
+                      },
                       child: Image.asset(
                         "assets/buttons/delete-cart.png",
                         width: Get.width * 0.4,
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.defaultDialog(
+                            title: "Maaf",
+                            middleText: "Layanan ini belum tersedia");
+                      },
                       child: Image.asset(
                         "assets/buttons/paid-cart.png",
                         width: Get.width * 0.4,

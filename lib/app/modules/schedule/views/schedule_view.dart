@@ -48,8 +48,6 @@ class ScheduleView extends GetView<ScheduleController> {
     return Scaffold(
       backgroundColor: Color(0xff48566A),
       appBar: AppBar(
-        // shape: RoundedRectangleBorder(
-        //     borderRadius: BorderRadius.vertical(bottom: Radius.circular(50))),
         title: Padding(
             padding: const EdgeInsets.only(top: 10, left: 30),
             child: Row(
@@ -64,12 +62,12 @@ class ScheduleView extends GetView<ScheduleController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Milda Maulida Fauziah",
+                        "Unknown User",
                         style:
                             TextStyle(color: Color(0xFF29313d), fontSize: 15),
                       ),
                       Text(
-                        "12 MIPA",
+                        "Unknown Class",
                         style:
                             TextStyle(color: Color(0xFF29313d), fontSize: 15),
                       ),

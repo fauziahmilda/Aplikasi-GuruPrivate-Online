@@ -72,7 +72,11 @@ class CartEditView extends GetView<CartEditController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.defaultDialog(
+                              title: "Maaf",
+                              middleText: "Layanan ini belum tersedia");
+                        },
                         icon: Icon(
                           Icons.check_box,
                           color: const Color(0xFF48566A),
@@ -80,38 +84,41 @@ class CartEditView extends GetView<CartEditController> {
                     Container(
                       width: 160,
                       height: 65,
-                      child: Expanded(
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.calendar_month,
-                                      color: const Color(0xFF48566A),
-                                    )),
-                                Container(
-                                  height: 45,
-                                  width: 110,
-                                  child: TextField(
-                                    style: TextStyle(fontSize: 14),
-                                    decoration: InputDecoration(
-                                      hintText: "Wed, 20 Jul 2022",
-                                      border: InputBorder.none,
-                                    ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              IconButton(
+                                  onPressed: () {
+                                    Get.defaultDialog(
+                                        title: "Maaf",
+                                        middleText:
+                                            "Layanan ini belum tersedia");
+                                  },
+                                  icon: Icon(
+                                    Icons.calendar_month,
+                                    color: const Color(0xFF48566A),
+                                  )),
+                              Container(
+                                height: 45,
+                                width: 110,
+                                child: TextField(
+                                  style: TextStyle(fontSize: 14),
+                                  decoration: InputDecoration(
+                                    hintText: "Wed, 20 Jul 2022",
+                                    border: InputBorder.none,
                                   ),
                                 ),
-                              ],
-                            ),
-                            Container(
-                              width: 160,
-                              height: 1,
-                              color: Colors.brown,
-                            )
-                          ],
-                        ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            width: 160,
+                            height: 1,
+                            color: Colors.brown,
+                          )
+                        ],
                       ),
                     ),
                     SizedBox(
@@ -120,44 +127,47 @@ class CartEditView extends GetView<CartEditController> {
                     Container(
                       width: 160,
                       height: 65,
-                      child: Expanded(
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.timer,
-                                      color: const Color(0xFF48566A),
-                                    )),
-                                Container(
-                                  height: 45,
-                                  width: 110,
-                                  child: TextField(
-                                    style: TextStyle(fontSize: 14),
-                                    decoration: InputDecoration(
-                                      hintText: "00:00 - 00:00",
-                                      border: InputBorder.none,
-                                    ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () {
+                                    Get.defaultDialog(
+                                        title: "Maaf",
+                                        middleText:
+                                            "Layanan ini belum tersedia");
+                                  },
+                                  icon: Icon(
+                                    Icons.timer,
+                                    color: const Color(0xFF48566A),
+                                  )),
+                              Container(
+                                height: 45,
+                                width: 110,
+                                child: TextField(
+                                  style: TextStyle(fontSize: 14),
+                                  decoration: InputDecoration(
+                                    hintText: "00:00 - 00:00",
+                                    border: InputBorder.none,
                                   ),
                                 ),
-                              ],
-                            ),
-                            Container(
-                              width: 160,
-                              height: 1,
-                              color: Colors.brown,
-                            ),
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(
-                                "Max, 3 hours",
-                                style: TextStyle(fontSize: 10),
                               ),
-                            )
-                          ],
-                        ),
+                            ],
+                          ),
+                          Container(
+                            width: 160,
+                            height: 1,
+                            color: Colors.brown,
+                          ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Max, 3 hours",
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          )
+                        ],
                       ),
                     )
                   ],
@@ -355,7 +365,11 @@ class CartEditView extends GetView<CartEditController> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.defaultDialog(
+                            title: "Maaf",
+                            middleText: "Layanan ini belum tersedia");
+                      },
                       child: Image.asset(
                         "assets/buttons/paid-cart.png",
                         width: Get.width * 0.4,

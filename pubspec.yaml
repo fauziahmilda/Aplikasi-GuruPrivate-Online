@@ -11,21 +11,15 @@ dependencies:
   get: 4.6.5
   flutter:
     sdk: flutter
-  emoji_picker_flutter: ^1.5.0
   flutter_launcher_icons: ^0.10.0
   get_storage: ^2.0.3
   lottie: ^1.4.2
   introduction_screen: ^3.0.2
-  image_picker: ^0.8.6
-  intl: ^0.17.0
   firebase_core: ^2.1.1
   firebase_auth: ^4.1.2
   # cloud_firestore: ^4.0.4
   firebase_storage: ^11.0.4
   google_sign_in: ^5.4.2
-  avatar_glow: ^2.0.2
-  provider: ^6.0.4
-  navigator: ^1.1.0
   json_annotation: ^4.7.0
   flutter_rating_bar: ^4.0.1
   flutter_toggle_tab: ^1.2.0

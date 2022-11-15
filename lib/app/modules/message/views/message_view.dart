@@ -68,7 +68,10 @@ class MessageView extends GetView<MessageController> {
           ),
           IconButton(
             icon: const Icon(Icons.more_vert),
-            onPressed: () {},
+            onPressed: () {
+              Get.defaultDialog(
+                  title: "Maaf", middleText: "Layanan ini belum tersedia");
+            },
           ),
         ],
         shape: RoundedRectangleBorder(

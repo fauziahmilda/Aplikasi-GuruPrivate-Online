@@ -53,28 +53,29 @@ class SearchMessageView extends GetView<SearchMessageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFF48566A),
       appBar: AppBar(
         elevation: 0,
         title: Container(
-          child: Expanded(
-            child: Container(
-              height: 35,
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              // margin: EdgeInsets.only(right: 16),
-              decoration: ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                color: Colors.white,
-              ),
-              child: Expanded(
-                child: TextField(
-                  controller: controller.searchC,
-                  decoration: InputDecoration.collapsed(
-                    hintText: 'Search',
-                  ),
-                ),
+          height: 25,
+          width: Get.width * 0.8,
+          alignment: Alignment.centerLeft,
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          // margin: EdgeInsets.only(right: 16),
+          decoration: ShapeDecoration(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            color: Colors.white,
+          ),
+          child: SizedBox(
+            height: 25,
+            width: Get.width * 0.8,
+            child: TextField(
+              controller: controller.searchC,
+              decoration: InputDecoration(
+                hintText: 'Search',
+                contentPadding: EdgeInsets.only(bottom: 13),
               ),
             ),
           ),

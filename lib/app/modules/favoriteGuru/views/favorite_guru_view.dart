@@ -15,7 +15,7 @@ class FavoriteGuruView extends GetView<FavoriteGuruController> {
     return Scaffold(
         backgroundColor: Color(0xFFD9D9D9),
         appBar: AppBar(
-          title: const Text('Favorite'),
+          title: const Text('Favorite Teachers'),
           centerTitle: true,
           elevation: 0,
           backgroundColor: Color(0xFF7E6A56),
@@ -44,7 +44,7 @@ class FavoriteGuruView extends GetView<FavoriteGuruController> {
                   child: GridView.builder(
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisSpacing: 10,
+                          crossAxisSpacing: 5,
                           crossAxisCount: 3, //jumlah kolom ke pinggir
                           mainAxisSpacing: 10,
                           childAspectRatio: 2 / 3.5),
@@ -87,17 +87,32 @@ class FavoriteGuruView extends GetView<FavoriteGuruController> {
                                         Container(
                                           width: Get.width,
                                           height: 20,
-                                          child: Text("Teacher Name"),
+                                          child: Text(
+                                            "Teacher Name",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Color(0xFF29313d)),
+                                          ),
                                         ),
                                         Container(
                                           width: Get.width,
                                           height: 20,
-                                          child: Text("Subject"),
+                                          child: Text(
+                                            "Subject",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Color(0xFF29313d)),
+                                          ),
                                         ),
                                         Container(
                                           width: Get.width,
                                           height: 20,
-                                          child: Text("Rp. 100.000,00"),
+                                          child: Text(
+                                            "Rp. 100.000,00",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Color(0xFF29313d)),
+                                          ),
                                         ),
                                         Container(
                                           width: Get.width,

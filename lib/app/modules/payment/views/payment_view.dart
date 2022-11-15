@@ -95,7 +95,11 @@ class PaymentView extends GetView<PaymentController> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.defaultDialog(
+                            title: "Maaf",
+                            middleText: "Layanan ini belum tersedia");
+                      },
                       child: Image.asset(
                         "assets/buttons/confirm.png",
                         width: Get.width * 0.4,

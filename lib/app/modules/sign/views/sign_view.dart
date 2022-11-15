@@ -325,7 +325,7 @@ class SignView extends GetView<SignController> {
                       Padding(
                         padding: EdgeInsets.only(top: 10),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () => authC.loginG(),
                           child: Image.asset(
                             "assets/buttons/g_signup.png",
                             width: 274,

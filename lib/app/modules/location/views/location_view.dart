@@ -74,7 +74,7 @@ class LocationView extends GetView<LocationController> {
             ),
             //ICON CURRENT LOCATIOIN AND CHOOSE ON MAP
             Container(
-              height: Get.height * 0.07,
+              height: Get.height * 0.05,
               width: Get.width,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -107,15 +107,15 @@ class LocationView extends GetView<LocationController> {
             //GAMBAR MAP
             Padding(
               padding: const EdgeInsets.all(10),
-              child: Expanded(
-                  child: ClipRRect(
+              child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
                   "assets/images/map.png",
                   fit: BoxFit.cover,
+                  width: Get.width * 0.9,
                   height: Get.height * 0.6,
                 ),
-              )),
+              ),
             )
           ],
         ),

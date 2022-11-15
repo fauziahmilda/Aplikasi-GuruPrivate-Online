@@ -113,7 +113,7 @@ class SettingView extends GetView<SettingController> {
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             child: Container(
                               color: Color(0xFFD9D9D9),
-                              width: Get.width * 60 / 100,
+                              width: Get.width * 65 / 100,
                               height: 380,
                               child: Column(
                                 mainAxisAlignment:

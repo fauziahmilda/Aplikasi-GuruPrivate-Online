@@ -41,9 +41,7 @@ class IntroductionView extends GetView<IntroductionController> {
               )
             ],
             onDone: () => Get.offAllNamed(Routes.LOGIN),
-            onSkip: () {
-              // You can also override onSkip callback
-            },
+            onSkip: () => Get.offAllNamed(Routes.LOGIN),
             showBackButton: false,
             showSkipButton: true,
             skip: const Text(
@@ -58,8 +56,8 @@ class IntroductionView extends GetView<IntroductionController> {
                 style: TextStyle(
                     fontWeight: FontWeight.w600, color: Color(0xFF29313d))),
             dotsDecorator: DotsDecorator(
-                size: const Size.square(10.0),
-                activeSize: const Size(20.0, 10.0),
+                size: const Size.square(15.0),
+                activeSize: const Size(30.0, 10.0),
                 activeColor: Color(0xFF48566A),
                 color: Color(0xFF584A3C),
                 spacing: const EdgeInsets.symmetric(horizontal: 3.0),

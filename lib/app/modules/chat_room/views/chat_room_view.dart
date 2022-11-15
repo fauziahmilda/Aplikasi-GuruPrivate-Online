@@ -44,7 +44,7 @@ class ChatRoomView extends GetView<ChatRoomController> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 15),
             child: InkWell(
-              onTap: (() => Get.back()),
+              onTap: (() => Get.offAllNamed(Routes.MESSAGE)),
               child: Icon(
                 Icons.arrow_back,
               ),
@@ -57,7 +57,10 @@ class ChatRoomView extends GetView<ChatRoomController> {
             ),
             IconButton(
               icon: const Icon(Icons.more_vert),
-              onPressed: () {},
+              onPressed: () {
+                Get.defaultDialog(
+                    title: "Maaf", middleText: "Layanan ini belum tersedia");
+              },
             ),
           ],
           shape: RoundedRectangleBorder(
@@ -104,8 +107,15 @@ class ChatRoomView extends GetView<ChatRoomController> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 10),
-                          child: Icon(Icons.file_upload_rounded,
-                              color: Color(0xFF584A3C)),
+                          child: TextButton(
+                            onPressed: () {
+                              Get.defaultDialog(
+                                  title: "Maaf",
+                                  middleText: "Layanan ini belum tersedia");
+                            },
+                            child: Icon(Icons.file_upload_rounded,
+                                color: Color(0xFF584A3C)),
+                          ),
                         ),
                       ],
                     ),
@@ -113,7 +123,11 @@ class ChatRoomView extends GetView<ChatRoomController> {
                   IconButton(
                     icon: Icon(Icons.send),
                     color: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.defaultDialog(
+                          title: "Maaf",
+                          middleText: "Layanan ini belum tersedia");
+                    },
                   )
                 ],
               ),

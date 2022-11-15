@@ -13,9 +13,6 @@ import '../controllers/search_controller.dart';
 class SearchView extends GetView<SearchController> {
   SearchView({Key? key}) : super(key: key);
 
-  final ScrollController _controller = ScrollController();
-  //POPUP FILTER MAPEL
-
   @override
   Widget build(BuildContext context) {
     // var appBarWidth = MediaQuery.of(context).size.width;
@@ -24,39 +21,51 @@ class SearchView extends GetView<SearchController> {
         resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xFFE1E5EA),
         appBar: AppBar(
-          // title: const Text('Search bar'),
           centerTitle: true,
           elevation: 0,
           backgroundColor: Color(0xFF584A3C),
-          title: Expanded(
-            child: Container(
-              height: 35,
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              // margin: EdgeInsets.only(right: 16),
-              decoration: ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                color: Colors.white,
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    // ignore: prefer_const_constructors
+          title: Container(
+            height: 30,
+            width: Get.width * 0.9,
+            alignment: Alignment.centerLeft,
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            // margin: EdgeInsets.only(right: 16),
+            decoration: ShapeDecoration(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              color: Colors.white,
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 5),
+                  child: TextButton(
+                    onPressed: () {
+                      Get.defaultDialog(
+                          title: "Maaf",
+                          middleText: "Layanan ini belum tersedia");
+                    },
+                    style: TextButton.styleFrom(
+                      minimumSize: Size.zero,
+                      padding: EdgeInsets.zero,
+                    ),
                     child: Icon(Icons.arrow_back,
                         color: Color.fromARGB(255, 87, 87, 87)),
                   ),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration.collapsed(
-                        hintText: 'Search',
-                      ),
+                ),
+                SizedBox(
+                  height: 30,
+                  width: Get.width * 0.5,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      hintMaxLines: 15,
+                      contentPadding: EdgeInsets.only(bottom: 13),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           actions: [
@@ -182,8 +191,6 @@ class SearchView extends GetView<SearchController> {
                     width: Get.width,
                     //tempat data guru tampil
                     child: Scrollbar(
-                      controller: _controller,
-                      // isAlwaysShown: true,
                       thumbVisibility: true,
                       child: GridView.builder(
                           shrinkWrap: true,
@@ -229,17 +236,32 @@ class SearchView extends GetView<SearchController> {
                                             Container(
                                               width: Get.width,
                                               height: 20,
-                                              child: Text("Teacher Name"),
+                                              child: Text(
+                                                "Teacher Name",
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xFF29313d)),
+                                              ),
                                             ),
                                             Container(
                                               width: Get.width,
                                               height: 20,
-                                              child: Text("Subject"),
+                                              child: Text(
+                                                "Subject",
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xFF29313d)),
+                                              ),
                                             ),
                                             Container(
                                               width: Get.width,
                                               height: 20,
-                                              child: Text("Rp. 100.000,00"),
+                                              child: Text(
+                                                "Rp. 100.000,00",
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xFF29313d)),
+                                              ),
                                             ),
                                             Container(
                                               width: Get.width,

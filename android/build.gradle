@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '1.7.21'
     repositories {
         google()
         mavenCentral()
@@ -7,8 +7,11 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:7.1.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.21"
         classpath 'com.google.gms:google-services:4.3.13'
+        classpath 'org.jetbrains.kotlin:kotlin-stdlib:1.7.21'
+        classpath 'org.jetbrains.kotlin:kotlin-stdlib-common:1.7.21'
+        classpath 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.21'
     }
 }
 

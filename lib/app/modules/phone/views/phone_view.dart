@@ -59,7 +59,11 @@ class PhoneView extends GetView<PhoneController> {
                 color: Colors.white,
                 child: IconButton(
                     iconSize: 30,
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.defaultDialog(
+                          title: "Maaf",
+                          middleText: "Layanan ini belum tersedia");
+                    },
                     icon: Icon(
                       Icons.volume_off,
                       color: Color.fromARGB(255, 39, 161, 43),
